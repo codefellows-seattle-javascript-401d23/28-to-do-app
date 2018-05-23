@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Landing from './landing';
 import Dashboard from './dashboard';
+import '../style/main.scss';
 
 export default class App extends React.Component {
   render() {
