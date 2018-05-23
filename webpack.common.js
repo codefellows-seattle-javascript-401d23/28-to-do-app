@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssPlugin = require('mini-css-extract-plugin');
 
 const webpackConfig = module.exports = {};
 
@@ -14,7 +15,10 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'Jennifers HTML file',
+    title: 'Jennifer\'s To-Do List App',
+  }),
+  new MiniCssPlugin({
+    filename: '[name].[hash].css',
   }),
 ];
 
@@ -36,5 +40,13 @@ webpackConfig.module.rules = [
         cacheDirectory: true,
       },
     },
+  },
+  {
+    test: /\.scss$/,
+    use: [
+      MiniCssPlugin.loader,
+      'css-loader',
+      'sass-loader',
+    ],
   },
 ];

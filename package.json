@@ -4,7 +4,9 @@
   "description": "Lab 28: To-Do App ===",
   "main": "webpack.common.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "jest --forceExit --runInBand",
+    "watch": "webpack-dev-server --config webpack.dev.js"
   },
   "repository": {
     "type": "git",

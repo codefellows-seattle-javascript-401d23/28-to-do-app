@@ -1,5 +1,5 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const commonConfig = require('./webpack.common');
 const { HotModuleReplacementPlugin } = require('webpack');
 
 const webpackDevConfig = {};
@@ -19,16 +19,4 @@ webpackDevConfig.plugins = [
   new HotModuleReplacementPlugin(),
 ];
 
-webpackDevConfig.module = {};
-webpackDevConfig.module.rules = [
-  {
-    test: /\.scss$/,
-    use: [
-      'style-loader',
-      'css-loader',
-      'sass-loader',
-    ],
-  },
-];
-
-module.exports = merge(common, webpackDevConfig);
+module.exports = merge(commonConfig, webpackDevConfig);
