@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 import autoBind from '../utils/utils';
+import NoteForm from './note-form';
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class Dashboard extends React.Component {
   }
 
   handleAddNote(note) {
-    if (note.title === '') {
+    if (note.content === '') {
       return this.setState({ error: true });
     }
 
@@ -22,17 +23,17 @@ export default class Dashboard extends React.Component {
 
     return this.setState((previousState) => {
       return {
-        expenses: [...previousState.expenses, expense],
+        notes: [...previousState.notes, note],
         error: null,
       };
     });
   }
 
-  handleTotalPrice() {
-    return this.state.expenses.reduce((sum, expense) => {
-      return sum + Number(expense.price);
-    }, 0);
-  }
+  // handleTotalPrice() {
+  //   return this.state.expenses.reduce((sum, expense) => {
+  //     return sum + Number(expense.price);
+  //   }, 0);
+  // }
 
   handleNoteList() {
     return (
@@ -41,7 +42,9 @@ export default class Dashboard extends React.Component {
           this.state.notes.map((note) => {
             return (
               <li key={note.id}>
-                Note goes here.
+                Note goes here:
+                <h3>{note.title}</h3>
+                <p>{note.content}</p>
               </li>
             );
           })
@@ -54,7 +57,9 @@ export default class Dashboard extends React.Component {
     return (
       <section className="dashboard">
         <h1>To-Do List Dashboard</h1>
-
+        <NoteForm
+        handleAddNote={this.handleAddNote}
+        />
         {
           this.state.error && <h2 className="error">You must enter a title.</h2>
         }

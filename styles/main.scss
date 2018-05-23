@@ -37,6 +37,7 @@ nav {
   li{
     a {
       color: $nav-link-color;
+      text-decoration: none;
       &:hover, &:focus{
         color: $nav-link-hover-color;
       }
