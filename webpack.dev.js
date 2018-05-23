@@ -1,7 +1,7 @@
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 
-const { HotModeuleReplacementPlugin } = require('webpack');
+const { HotModuleReplacementPlugin } = require('webpack');
 
 const webpackDevConfig = {};
 
@@ -16,7 +16,7 @@ webpackDevConfig.devServer = {
 };
 
 webpackDevConfig.plugins = [
-    new HotModeuleReplacementPlugin(),
+  new HotModuleReplacementPlugin(),
 ];
 
 module.exports = merge(commonConfig, webpackDevConfig);
