@@ -1,57 +1,37 @@
-401 JS --  Lab 28 Todo
-===
+# LAB 28
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
- 
-## Feature Tasks 
-Create the following components and structure them according to the following diagram.  
-``` 
-App
-  Landing
-  Dashboard
-    NoteForm
-    NoteList
-      Noteitem
-```
-#### App
-* The app component should manage the frontend routes and have a navbar
-* the `/` route should display the `Landing` component
-* the `/dashboard` route should display the `Dashboard` component
+**Author**: Joshua Fredrickson
 
-#### Landing
-* The landing component should display a brief description of the to do app
+**Version**: 1.0.0 
 
-#### Dashboard Component 
-* The dashboard component should manage the entire **application state**. 
-* The state should contain a notes array
-* It should have a bound `addNote(note)` method that adds a note to `state.notes`
-  * each note that is added should have the following data
-    * `id`: always should contain the result of `uuid.v1()`
-    * `content`: user provided content
-    * `title`: user provided title
-* It should have a bound `removeNote(note)` method that removes a note from `state.notes` based on its `id`
+Lab 28
 
-#### NoteForm Component
-* `onComplete` the NoteForm should add a note to the application state
 
-#### NoteList Component 
-* should display an unordered list of NoteItem components
+To use the Lab 28 application, [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) 
+(Node Package manager), and [Mongo DB](https://docs.mongodb.com/manual/installation/)  will need
+ to be locally installed.  Once Node.js, npm, Mongo DB have been installed, install the Lab 13 files.  
+ Prior to starting the Lab 28 application, from the command line while you are in the Lab 28 file 
+ folder, enter the command `npm i`.  This will download all needed dependencies for the 
+ application to run.   
 
-#### NoteItem
-* should display the notes content and title
-* should display a delete button
-  * `onClick` the note should be removed from the application state
 
-## Test
-* Test Dashboard
-  * Test the initial state
-* Test NoteForm
-  * Test the initial state
+This application was deployed with the following technologies.
+Node.js, npm, body-parser, dotenv, express, faker, mongoose, winston, babel, superagent, 
+http-errors, jest, eslint, JavaScript
+    
+SERVER ENDPOINTS 
+POST /api/store
+GET /api/shoes/:id
+PUT /api/shoes/:id
+DELETE /api/shoes/:id
 
-##  Documentation  
-Write a description of the project in your README.md
+
+05-02-2018  4:30pm  first commit, scaffolding tests not passing
+05-02-2018  9:30pm  fixing routes in store-router, and server (had a 4 hour break)
+05-02-2018  10:30pm Passing 8 tests
+05-02-2018  10:50pm Passing 9 tests
+05-02-2018  11:15pm Passing 10 tests
+05-02-2018  11:50pm Passing 11 tests
+05-03-2018  12:13pm Working on README
+
+Special thanks to all of the Code Fellows staff and fellow 401-d23 students.
