@@ -1,6 +1,8 @@
 $background-color: #111;
 $font-color: #f0f0f0;
 $error-color: #f00;
+$nav-link-color: #fff;
+$nav-link-hover-color: cyan;
 
 html, body {
   max-width: 550px;
@@ -30,4 +32,14 @@ button {
   margin: auto;
   padding: 0.3em 1.2em;
   border-radius: 5px;
+}
+nav {
+  li{
+    a {
+      color: $nav-link-color;
+      &:hover, &:focus{
+        color: $nav-link-hover-color;
+      }
+    }
+  }
 }
