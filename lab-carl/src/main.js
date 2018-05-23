@@ -1,1 +1,7 @@
-console.log('First contact!');
+import React from 'react';
+import { render as reactDomRender } from 'react-dom';
+import App from './component/app/app';
+
+const container = document.createElement('div');
+document.body.appendChild(container);
+reactDomRender(<App />, container);
