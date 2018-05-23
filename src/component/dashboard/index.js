@@ -8,7 +8,7 @@ export default class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      expense: [];
+      expense: [],
       error: null,
     };
 
