@@ -11,8 +11,24 @@ p,h1,h2,ul {
 }
 button {
   background-color:pink;
+  padding: 4px;
+
 }
 .error {
   border-color:$error;
 }
+.title {
+  color: black;
+  font-size: 20px;
+}
+input {
+  padding: 8px;
+  margin-right: 7px;
+}
+.remove {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 2px;
+}
+
 
