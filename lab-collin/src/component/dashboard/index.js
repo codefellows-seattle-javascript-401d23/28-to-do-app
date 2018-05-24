@@ -22,7 +22,6 @@ export default class Dashboard extends React.Component {
 
     note.createdOn = new Date();
     note.id = uuid();
-    console.log(note);
 
     return this.setState((previousState) => {
       return {
@@ -32,13 +31,11 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  handleDeleteNote(id) {
-    return this.setState((previousState) => {
+  handleDeleteNote(noteToRemove) {
+    this.setState((previousState) => {
       return {
-        notes: [...previousState.notes.filter (note => {
-          note.id !== id;
-        })],
-        error: null,
+        notes: previousState.notes.filter(note => 
+          note.id !== noteToRemove.id),
       };
     });
   }
@@ -51,7 +48,7 @@ export default class Dashboard extends React.Component {
             return (
               <li key={note.id}>
                 {note.title} : {note.content}
-                <button onClick={(e) => this.handleDeleteNote(note.id, e)}>delete note</button>
+                <button onClick={e => this.handleDeleteNote(note, e)}>delete note</button>
               </li>
             );
           })
