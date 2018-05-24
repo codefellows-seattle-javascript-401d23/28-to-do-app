@@ -5,7 +5,9 @@ export default class NoteList extends React.Component {
   render() {
     return (
       <NoteItem
-        notes={this.props.notes}/>
+        notes={this.props.notes}
+       handleDeleteNote={this.props.handleDeleteNote}
+      />
     );
   }
 }
