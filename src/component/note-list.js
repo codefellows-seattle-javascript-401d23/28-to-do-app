@@ -4,7 +4,7 @@ import NoteItem from './note-item';
 
 export default class NoteList extends React.Component {
   render() {
-    const { notes, handleRemoveNote } = this.props;
+    const { notes, handleRemoveNote, handleUpdateNote } = this.props;
     return (
       <div>
         <h3>My To-Do Items:</h3>
@@ -18,6 +18,7 @@ export default class NoteList extends React.Component {
                       key={note.id}
                       id={note.id}
                       handleRemoveNote={ handleRemoveNote }
+                      handleUpdateNote={ handleUpdateNote }
                       note={note}
                     />
                   );
@@ -34,4 +35,5 @@ export default class NoteList extends React.Component {
 NoteList.propTypes = {
   notes: PropTypes.array,
   handleRemoveNote: PropTypes.func,
+  handleUpdateNote: PropTypes.func,
 };

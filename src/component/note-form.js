@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autobind from '../utils/autobind';
 
+const emptyState = {
+  title: '',
+  content: '',
+};
+
 export default class NoteForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: '',
-      content: '',
-    };
+    this.state = this.props.note ? this.props.note : emptyState;
     autobind.call(this, NoteForm);
   }
 
@@ -27,10 +29,11 @@ export default class NoteForm extends React.Component {
     };
     e.preventDefault();
     this.props.handleAddNote(note);
-    this.setState({ title: '', content: '' });
+    this.setState(this.props.note ? this.props.note : emptyState);
   }
 
   render() {
+    const buttonText = this.props.note ? 'update' : 'add';
     return (
       <form className='note-form' onSubmit={ this.handleSubmit }>
         <p>Add to-do items:</p>
@@ -50,7 +53,7 @@ export default class NoteForm extends React.Component {
           onChange={ this.handleChange }
           required
         />
-        <button type='submit'>add</button>
+        <button type='submit'>{ buttonText }</button>
       </form>
     );
   }
@@ -58,4 +61,5 @@ export default class NoteForm extends React.Component {
 
 NoteForm.propTypes = {
   handleAddNote: PropTypes.func,
+  note: PropTypes.object,
 };
