@@ -1,5 +1,5 @@
 import React from 'react';
-import autoBind from '../utils/utils';
+import autoBind from '../../utils/utils';
 
 export default class NoteForm extends React.Component {
   constructor(props) {
