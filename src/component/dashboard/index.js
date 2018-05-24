@@ -56,7 +56,7 @@ export default class Dashboard extends React.Component {
   render() {
     return (
         <section className="dashboard">
-          <h1>Budget Tracker Dashboard</h1>
+          <h1>UA notes Dashboard</h1>
           <ExpenseForm
               handleAddExpense={this.handleAddExpense}
           />
