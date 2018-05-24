@@ -1,57 +1,25 @@
-401 JS --  Lab 28 Todo
-===
+# Lab 28 - TODO Note App
+By: Wyatt Pefley
+___
+## Overview
+This lab is a TODO application that takes user input and appends it to the page as a list. This allows users to make lists in order to remind them to do tasks! Once a task is done, a user may remove that note from the list. 
+___
+## Architecture
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
- 
-## Feature Tasks 
-Create the following components and structure them according to the following diagram.  
-``` 
-App
-  Landing
-  Dashboard
-    NoteForm
-    NoteList
-      Noteitem
-```
-#### App
-* The app component should manage the frontend routes and have a navbar
-* the `/` route should display the `Landing` component
-* the `/dashboard` route should display the `Dashboard` component
+- JavaScript (main controller)
+- webpack
+- Babel (transpiler)
+- ESLint (Helpful linting tool)
+- sass (Makes the page look pretty)
+- React (Front-End JS Library)
+- uuid
+___
+## Getting Started
+### In order to run this application...
 
-#### Landing
-* The landing component should display a brief description of the to do app
-
-#### Dashboard Component 
-* The dashboard component should manage the entire **application state**. 
-* The state should contain a notes array
-* It should have a bound `addNote(note)` method that adds a note to `state.notes`
-  * each note that is added should have the following data
-    * `id`: always should contain the result of `uuid.v1()`
-    * `content`: user provided content
-    * `title`: user provided title
-* It should have a bound `removeNote(note)` method that removes a note from `state.notes` based on its `id`
-
-#### NoteForm Component
-* `onComplete` the NoteForm should add a note to the application state
-
-#### NoteList Component 
-* should display an unordered list of NoteItem components
-
-#### NoteItem
-* should display the notes content and title
-* should display a delete button
-  * `onClick` the note should be removed from the application state
-
-## Test
-* Test Dashboard
-  * Test the initial state
-* Test NoteForm
-  * Test the initial state
-
-##  Documentation  
-Write a description of the project in your README.md
+1. Fork the to-do app repo.
+2. Clone to your local machine.
+3. Run ```npm i```. To view in the browser.
+4. Enter ```npm run watch``` into your command line. 
+### To test the intial state of components...
+1. enter ```npm run test``` into your command line.
