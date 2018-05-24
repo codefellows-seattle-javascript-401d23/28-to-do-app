@@ -12,6 +12,7 @@ export default class ExpenseForm extends React.Component {
 
     autoBind.call(this, ExpenseForm);
   }
+  }
 
   handleSubmit(event) {
     event.preventDefault();

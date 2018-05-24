@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from './note-form/index';
-import ExpenseForm from '../expense-form/index';
+import NoteList from './note-list/index';
 import autoBind from '../../utils';
 
 export default class Dashboard extends React.Component {
@@ -23,7 +23,6 @@ export default class Dashboard extends React.Component {
     }
 
     note.id = uuid();
-
     return this.setState((previousState) => {
       return {
         notes: [...previousState.notes, note],
@@ -39,36 +38,14 @@ export default class Dashboard extends React.Component {
   //   }
   // }
 
-  handleAddExpense(expense) {
-    if (expense.title === '') {
-      return this.setState({ error: true });
-    }
-
-    expense.createdOn = new Date();
-    expense.id = uuid();
-
-    return this.setState((previousState) => {
-      return {
-        expenses: [...previousState.expenses, expense],
-        error: null,
-      };
-    });
-  }
-
-  handleTotalPrice() {
-    return this.state.expenses.reduce((sum, expense) => {
-      return sum + Number(expense.price);
-    }, 0);
-  }
-
-  handleExpensesList() {
+  handleNoteList() {
     return (
       <ul>
         {
-          this.state.expenses.map((expense) => {
+          this.state.notes.map((note) => {
             return (
-              <li key={expense.id}>
-                {expense.title} : ${expense.price}
+              <li key={note.id}>
+                {note.title} : {note.content}
               </li>
             );
           })
@@ -78,25 +55,19 @@ export default class Dashboard extends React.Component {
   }
 
   render() {
-      // return (
-      //   <section className="dashboard">
-      //     <h1>Budget Tracker Dashboard</h1>
-      //     <ExpenseForm
-      //       handleAddExpense={this.handleAddExpense}
-      //     />
-      //     { this.state.error && <h2 className="error">You must enter a title.</h2> }
-      //     { this.handleExpensesList() }
-      //     <p> Your total costs are: ${ this.handleTotalPrice() }</p>
-      //   </section>
-      // );
     return (
       <section className="dashboard">
-        <h1>This is a form to add notes</h1>
+        <h2>Add Note</h2>
         <NoteForm
           handleAddNote={this.handleAddNote}
         />
         { this.state.error && <h2 className="error">You must enter a title.</h2> }
-      </section>
+
+      <div><br /><br />
+        <NoteList notesFromParent={ this.handleNoteList() }/>
+      </div>
+    </section>
+
     );
   }
 }

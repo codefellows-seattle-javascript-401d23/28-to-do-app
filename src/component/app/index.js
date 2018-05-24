@@ -13,7 +13,7 @@ export default class App extends React.Component {
               <h1>Lab 28 : To-Do</h1>
               <nav>
                 <ul>
-                  <li><Link to="/">Landing</Link></li>
+                  <li><Link to="/">Landing Page</Link></li>
                   <li><Link to="/dashboard">Dashboard</Link></li>
                 </ul>
               </nav>
@@ -21,7 +21,7 @@ export default class App extends React.Component {
             <Route
               exact
               path="/"
-              component={() => <h1>I am your landing page!</h1>}
+              component={() => <h1>I am your Landing Page!</h1>}
             />
             <Route
               exact
