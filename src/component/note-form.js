@@ -5,6 +5,7 @@ export default class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
+    // this is UI state
     this.state = {
       title: '',
       content: '',

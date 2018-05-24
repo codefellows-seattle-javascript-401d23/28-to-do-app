@@ -10,6 +10,7 @@ export default class Dashboard extends React.Component {
   constructor(props) {
     super(props);
 
+    // this is application state
     this.state = {
       notes: [],
       error: null,
@@ -39,6 +40,15 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  // TODO:  added during lecture missing something in the note-item module....
+  handleUpdatedNote(noteToUpdate) {
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(note => note.id !== noteToUpdate.id),
+      };
+    });
+  }
+
   render() {
     return (
       <section className="dashboard">
@@ -49,6 +59,7 @@ export default class Dashboard extends React.Component {
         <NoteList
           notes={this.state.notes}
         handleRemoveNote={this.handleRemoveNote}
+          handleUpdateNote={this.handleUpdatedNote}
         />
         { this.state.error && <h2 className="error">Enter a Llama note!</h2> }
       </section>
