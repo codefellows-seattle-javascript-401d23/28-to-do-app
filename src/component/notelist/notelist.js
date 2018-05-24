@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NoteItem from '../noteitem/noteitem';
 
 export default class NoteList extends React.Component {
@@ -29,3 +30,8 @@ export default class NoteList extends React.Component {
     );
   }
 }
+
+NoteList.propTypes = {
+  notes: PropTypes.object,
+  handleRemoveNote: PropTypes.func,
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import autoBind from '../../utils/autobind';
 
 export default class NoteForm extends React.Component {
@@ -55,3 +56,7 @@ export default class NoteForm extends React.Component {
     );
   }
 }
+
+NoteForm.propTypes = {
+  handleAddNote: PropTypes.func,
+};

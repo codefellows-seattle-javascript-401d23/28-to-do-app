@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import autoBind from '../../utils/autobind';
 
 export default class NoteItem extends React.Component {
@@ -26,3 +27,10 @@ export default class NoteItem extends React.Component {
     );
   }
 }
+
+NoteItem.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  id: PropTypes.number,
+  handleRemoveNote: PropTypes.func,
+};

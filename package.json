@@ -7,6 +7,11 @@
     "watch": "webpack-dev-server --config webpack.dev.js",
     "test": "jest --coverage"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/src/__test__/mock.asset.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dahby/to-do-app.git"
@@ -38,6 +43,7 @@
     "jest": "^22.4.4",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "sass-loader": "^7.0.1",
