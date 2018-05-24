@@ -6,9 +6,6 @@ export default class NoteList extends React.Component {
     return (
       <section className='note-list'>
       <h1> Your notes list </h1>
-      {/* <NoteItem
-        handleRemoveNote={this.handleRemoveNote}
-      /> */}
       <ul> 
         {
           this.props.notes.map((note) => {

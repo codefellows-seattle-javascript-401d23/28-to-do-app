@@ -1,9 +1,4 @@
 import React from 'react';
-import uuid from 'uuid/v4';
-import NoteForm from './../note-form/index';
-import autoBind from '../../utils';
-import NoteList from './../note-list/index';
-
 
 export default class NoteItem extends React.Component {
   // constructor(props) {
