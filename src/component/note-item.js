@@ -4,7 +4,6 @@ import autobind from '../utils/autobind';
 export default class NoteItem extends React.Component {
   constructor(props) {
     super(props);
-
     autobind.call(this, NoteItem);
   }
 
@@ -17,9 +16,11 @@ export default class NoteItem extends React.Component {
   render() {
     return (
       <li className='note-item'>
-        <h3>{ this.props.title }</h3>
-        <p>{ this.props.content }</p>
-        <button id={ this.props.id } onClick={ this.handleRemove }>delete</button>
+        <button id={ this.props.id } onClick={ this.handleRemove }>mark as complete</button>
+        <div>
+          <h3>{ this.props.title }</h3>
+          <p>{ this.props.content }</p>
+        </div>
       </li>
     );
   }

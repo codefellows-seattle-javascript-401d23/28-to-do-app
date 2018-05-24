@@ -14,8 +14,8 @@ export default class App extends React.Component {
               <h1>ToDo</h1>
               <nav>
                 <ul>
-                  <li><Link to='/'>Home</Link></li>
-                  <li><Link to='/dashboard'>Dashboard</Link></li>
+                  <li><Link to='/'>home</Link></li>
+                  <li><Link to='/dashboard'>dashboard</Link></li>
                 </ul>
               </nav>
             </header>

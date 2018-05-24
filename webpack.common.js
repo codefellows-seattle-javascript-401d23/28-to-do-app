@@ -16,7 +16,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HTMLWebpackPlugin({
-    title: 'Reddit Search',
+    title: 'ToDo',
   }),
   new MiniCssPlugin({
     filename: '[name].[hash].css',

@@ -32,11 +32,12 @@ export default class NoteForm extends React.Component {
   render() {
     return (
       <form className='note-form' onSubmit={ this.handleSubmit }>
+        <p>Add to-do items:</p>
         <input
           type='text'
           name='title'
           value={ this.state.title }
-          placeholder='Title'
+          placeholder='To-do Item'
           onChange={ this.handleChange }
           required
         />
@@ -44,11 +45,11 @@ export default class NoteForm extends React.Component {
           type='text'
           name='content'
           value={ this.state.content }
-          placeholder='Content'
+          placeholder='Description'
           onChange={ this.handleChange }
           required
         />
-        <button type='submit'>Submit Note</button>
+        <button type='submit'>add</button>
       </form>
     );
   }

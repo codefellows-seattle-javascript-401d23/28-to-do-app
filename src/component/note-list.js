@@ -5,6 +5,7 @@ export default class NoteList extends React.Component {
   render() {
     return (
       <div>
+        <h3>My To-Do Items:</h3>
         {
           this.props.notes && this.props.notes.length > 0 ?
             <ul className='note-list'>
@@ -22,12 +23,9 @@ export default class NoteList extends React.Component {
                 })
               }
             </ul> :
-            <div>
-              <p>No ToDo items to display.</p>
-            </div>
+            <p>Your to-do list is empty.</p>
         }
       </div>
-
     );
   }
 }

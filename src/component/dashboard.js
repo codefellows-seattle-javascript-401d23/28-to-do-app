@@ -30,11 +30,32 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  componentDidUpdate() {
+    localStorage.notes = JSON.stringify(this.state.notes);
+  }
+
+  componentDidMount() {
+    if (localStorage.notes) {
+      try {
+        const notes = JSON.parse(localStorage.notes);
+        return this.setState({ notes });
+      } catch (err) {
+        return console.error(err);
+      }
+    } else {
+      return null;
+    }
+  }
+
   render() {
     return (
       <section>
-        <NoteForm handleAddNote={ this.handleAddNote }/>
+        <NoteForm
+          className='note-form'
+          handleAddNote={ this.handleAddNote }
+        />
         <NoteList
+          className='note-list'
           handleRemoveNote={ this.handleRemoveNote }
           notes={ this.state.notes }
         />
