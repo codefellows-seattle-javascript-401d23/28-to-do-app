@@ -14,8 +14,16 @@ export default class NoteForm extends React.Component {
   }
 
   handleSubmit(event) {
+    const note = {
+      title: this.state.title,
+      content: this.state.content,
+    };
     event.preventDefault();
-    this.props.handleAddNote(this.state);
+    this.props.handleAddNote(note);
+    this.setState({
+      title: '',
+      content: '',
+    });
   }
 
   handleChange(event) {

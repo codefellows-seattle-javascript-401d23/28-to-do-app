@@ -22,12 +22,12 @@ export default class App extends React.Component {
             <Route
               exact
               path = '/'
-              component = {Landing}
+              component = { Landing }
             />
             <Route
               exact
               path = '/dashboard'
-              component = {Dashboard}
+              component = { Dashboard }
             />
           </div>
         </BrowserRouter>

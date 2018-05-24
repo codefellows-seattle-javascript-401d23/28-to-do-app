@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import NoteForm from './noteform';
+import NoteList from './notelist';
 import autoBind from '../utils/autobind';
 
 export default class Dashboard extends React.Component {
@@ -31,12 +32,43 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  handleRemoveNote(id) {
+    return this.setState((previousState) => {
+      return ({
+        notes: [...previousState.notes].filter(item => item.id !== id),
+      });
+    });
+  }
+
+  componentDidUpdate() {
+    localStorage.notes = JSON.stringify(this.state.notes);
+  }
+
+  componentDidMount() {
+    if (localStorage.notes) {
+      try {
+        const notes = JSON.parse(localStorage.notes);
+        return this.setState({ notes });
+      } catch (error) {
+        return console.error(error);
+      }
+    } else {
+      return null;
+    }
+  }
+
   render() {
     return (
       <section className = 'dashboard'>
         <h1>To-Do List Dashboard</h1>
         <NoteForm
+          className = 'noteForm'
           handleAddNote = { this.handleAddNote }
+        />
+        <NoteList 
+          className = 'noteList'
+          handleRemoveNote = { this.handleRemoveNote}
+          notes = { this.state.notes }
         />
       </section>
     );
