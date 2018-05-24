@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/sjgeyer/to-do-app.git"
   },
+  "jest": {
+    "setupFiles": ["./src/__test__/lib/browser-mock.js"]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -49,6 +52,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "mock-local-storage": "^1.0.5",
     "react-router-dom": "^4.2.2",
     "uuid": "^3.2.1"
   }
