@@ -1,6 +1,6 @@
 import React from 'react';
-import uuid from 'uuid/v4';
-import ExpenseForm from './../expense-form/index';
+import uuid from 'uuid/v1';
+import NoteForm from './../note-form/index';
 import autoBind from '../../utils/index';
 
 export default class Dashboard extends React.Component {
@@ -8,37 +8,45 @@ export default class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      expenses: [],
+      notes: [],
       error: null,
     };
 
     autoBind.call(this, Dashboard);
   }
 
-  handleAddExpense(expense) {
-    if (expense.title === '') {
+  handleAddNote(note) {
+    if (note.title === '') {
       return this.setState({ error: true });
     }
 
-    expense.createdOn = new Date();
-    expense.id = uuid();
+    note.createdOn = new Date();
+    note.id = uuid();
 
     return this.setState((previousState) => {
       return {
-        expenses: [...previousState.expenses, expense],
+        notes: [...previousState.notes, note],
         error: null,
       };
     });
   }
 
+  // handleRemoveNote() {
+  //   return this.setState((previousState) =>)
+  //   console.log('test removing note');
+  // }
+
   handleExpensesList() {
     return (
         <ul>
           {
-            this.state.expenses.map((expense) => {
+            this.state.notes.map((note) => {
               return (
-                  <li key={expense.id}>
-                    {expense.title} : ${expense.content}
+                  <li key={note.id}>
+                    {note.title} : {note.content}
+                    <br/>
+                    <button onClick='handleRemoveNote'>Remove Note</button>
+                    <br/>
                   </li>
               );
             })
@@ -51,8 +59,8 @@ export default class Dashboard extends React.Component {
     return (
         <section className="dashboard">
           <h1>UA notes Dashboard</h1>
-          <ExpenseForm
-              handleAddExpense={this.handleAddExpense}
+          <NoteForm
+              handleAddNote={this.handleAddNote}
           />
           { this.state.error && <h2 className="error">You must enter a title.</h2> }
           { this.handleExpensesList() }

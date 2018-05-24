@@ -1,7 +1,7 @@
 import React from 'react';
 import autoBind from '../../utils/index';
 
-export default class ExpenseForm extends React.Component {
+export default class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -10,12 +10,12 @@ export default class ExpenseForm extends React.Component {
       content: '',
     };
 
-    autoBind.call(this, ExpenseForm);
+    autoBind.call(this, NoteForm);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleAddExpense(this.state);
+    this.props.handleAddNote(this.state);
   }
 
   handleChange(event) {
@@ -38,6 +38,8 @@ export default class ExpenseForm extends React.Component {
           <input
             type='textArea'
             name='content'
+            rows='10'
+            cols='30'
             placeholder='content'
             value={this.state.content}
             onChange={this.handleChange}
