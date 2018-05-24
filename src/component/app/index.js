@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Dashboard from './dashboard/index';
 import Landing from './landing/index';
 import '../../styles/main.scss';
-// import knot from '../../utils/img/..';
+import knot from '../../utils/img/knot.png';
 
 
 export default class App extends React.Component {
@@ -14,7 +14,7 @@ export default class App extends React.Component {
           <div>
             <header>
               <h1>To-Do-List</h1>
-              {/* <img src={knot}/> */}
+              <img src={knot}/>
               <nav>
                 <ul>
                   <li><Link to="/">Home</Link></li>
