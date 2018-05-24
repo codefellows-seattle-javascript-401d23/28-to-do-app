@@ -47,5 +47,3 @@ export default class Dashboard extends React.Component {
     );
   }
 }
-
-// this.state.notes.filter(() => !input.note.id)
