@@ -1,6 +1,9 @@
+'use strict';
+
 import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from './../note-form/note-form';
+import NotesList from '../notes-list/notes-list';
 import autoBind from '../../utils/utils';
 
 export default class Dashboard extends React.Component {
@@ -31,20 +34,16 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  handleNotesDisplay() {
-    return (
-      <ul>
-        {
-          this.state.notes.map((note) => {
-            return (
-              <li key={note.id}>
-                {note.title} --- {note.content}
-              </li>
-            );
-          })
-        }
-      </ul>
-    );
+  handleRemoveNote(note) {
+    return this.setState((previousState) => {
+      const filtered = previousState.notes.filter((item) => {
+        return item.id !== note.id
+      });
+      return {
+        notes: filtered,
+        error: null,
+      }
+    });
   }
 
   render() {
@@ -54,7 +53,7 @@ export default class Dashboard extends React.Component {
         <NoteForm handleAddNote={this.handleAddNote}/>
         <p>TODO List</p>
         { this.state.error && <h2 className="error">Each note must have a title!</h2>}
-        { this.handleNotesDisplay() }
+        <NotesList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote}/>
       </section>
     );
   }

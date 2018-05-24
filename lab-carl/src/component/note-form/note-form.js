@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import autoBind from './../../utils/utils';
 
@@ -29,7 +31,7 @@ export default class NoteForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input 
-          type="test"
+          type="text"
           name="title"
           placeholder="Note Title..."
           value={this.state.title}

@@ -9,9 +9,9 @@ export default class Landing extends React.Component {
 
   render() {
     return (
-      <div>
+      <section>
         <h1>Welcome to your TODO list note app!</h1>
-      </div>
+      </section>
     )
   }
 }
