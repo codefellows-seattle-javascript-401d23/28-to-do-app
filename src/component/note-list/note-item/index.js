@@ -1,5 +1,5 @@
 import React from 'react';
-import autoBind from '../../utils/index';
+import autoBind from '../../../utils/index';
 
 export default class NoteItem extends React.Component {
   constructor(props) {
@@ -27,5 +27,4 @@ export default class NoteItem extends React.Component {
         </ul>
     );
   }
-
 }

@@ -18,9 +18,13 @@ To use the Lab 28 application, [Node.js](https://nodejs.org/en/)and [npm](https:
  application to run.   
 
 ##  Architecture 
-This application was deployed with the following technologies.
+This application was deployed with the following technologies along with the illlustrated structure.
 Node.js, npm, dotenv, uuid, babel, superagent, 
 http-errors, jest, eslint, JavaScript, enzyme, React
+
+![landing page image](./asset/IMG_9485.jpg)
+![dashboard page image](./asset/IMG_9486.jpg)
+
    
 
 ## Change Log
