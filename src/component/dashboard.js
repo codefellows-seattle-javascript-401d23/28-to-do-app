@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
-import NoteForm from './note-form';
-import NoteList from './note-list';
+import NoteForm from './note-form/note-form';
+import NoteList from './note-list/note-list';
 import autobind from '../utils/autobind';
 
 export default class Dashboard extends React.Component {
@@ -29,6 +29,7 @@ export default class Dashboard extends React.Component {
           (item.id === note.id ? note : item)),
       };
     });
+    this.forceUpdate();
   }
 
   handleRemoveNote(note) {

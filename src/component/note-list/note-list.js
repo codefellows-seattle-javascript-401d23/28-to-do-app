@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NoteItem from './note-item';
+import NoteItem from '../note-item/note-item';
+import './note-list.scss';
 
 export default class NoteList extends React.Component {
   render() {

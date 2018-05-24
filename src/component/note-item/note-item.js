@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NoteForm from './note-form';
-import Modal from './modal/modal';
+import NoteForm from '../note-form/note-form';
+import Modal from '../modal/modal';
+import './note-item.scss';
 
 export default class NoteItem extends React.Component {
-  constructer(props) {
-    super()
-  }
   render() {
     const { note, handleRemoveNote, handleUpdateNote } = this.props;
     const showModal = () => handleUpdateNote({ ...note, editing: true });
@@ -27,9 +25,6 @@ export default class NoteItem extends React.Component {
           </div>
         </li>
         <Modal show={ note.editing } handleClose={ hideModal }>
-          {
-            <h3>Editing: { note.title }</h3>
-          }
           <NoteForm handleAddNote={updateAndClose} note={note}/>
         </Modal>
       </div>

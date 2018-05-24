@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autobind from '../utils/autobind';
+import autobind from '../../utils/autobind';
+import './note-form.scss';
 
 const emptyState = {
   title: '',
@@ -23,11 +24,11 @@ export default class NoteForm extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     const note = {
       title: this.state.title,
       content: this.state.content,
     };
-    e.preventDefault();
     this.props.handleAddNote(note);
     this.setState(this.props.note ? this.props.note : emptyState);
   }
@@ -36,7 +37,10 @@ export default class NoteForm extends React.Component {
     const buttonText = this.props.note ? 'update' : 'add';
     return (
       <form className='note-form' onSubmit={ this.handleSubmit }>
-        <p>Add to-do items:</p>
+          {
+            this.props.note ? <p>Edit task: <strong>{this.props.note.title}</strong></p> :
+              <p>Add to-do items:</p>
+          }
         <input
           type='text'
           name='title'

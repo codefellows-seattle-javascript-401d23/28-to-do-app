@@ -1,0 +1,26 @@
+@import '../../style/vars';
+
+.note-form{
+  background: $light-background;
+  border-radius: $border-radius;
+  padding: 10px;
+  border: 1px solid $dark-background;
+
+  input{
+    display: block;
+    margin: 5px auto;
+    width: 300px;
+    text-align: center;
+    font-size: 12px;
+  }
+  button {
+    width: 50px;
+    margin-top: 5px;
+    color: $white;
+    background: $color-scheme-2;
+    border: 1px solid $color-scheme-2;
+  }
+  button:hover {
+    border: 1px solid $dark-background;
+  }
+}

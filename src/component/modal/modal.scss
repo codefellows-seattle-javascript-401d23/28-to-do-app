@@ -9,11 +9,30 @@
   background: $modal-color;
 
   .modal-main {
-    background: $modal-background;
+    background: $light-background;
+    border-radius: $border-radius;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 1px solid $color-scheme-2;
+
+    .note-form {
+      border: none;
+    }
+  }
+
+  .modal-button {
+    float: right;
+    width: 25px;
+    margin: 5px 5px;
+    background: $color-scheme-1;
+    border: 1px solid $color-scheme-1;
+    color: $light-background;
+  }
+
+  .modal-button:hover {
+    border: 1px solid $light-background;
   }
 }
 
