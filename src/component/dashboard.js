@@ -22,10 +22,10 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  handleRemoveNote(id) {
+  handleRemoveNote(note) {
     this.setState((previousState) => {
       return ({
-        notes: [...previousState.notes].filter(item => item.id !== id),
+        notes: previousState.notes.filter(item => item.id !== note.id),
       });
     });
   }
@@ -40,7 +40,7 @@ export default class Dashboard extends React.Component {
         const notes = JSON.parse(localStorage.notes);
         return this.setState({ notes });
       } catch (err) {
-        return console.error(err);
+        return console.error(err); // eslint-disable-line
       }
     } else {
       return null;

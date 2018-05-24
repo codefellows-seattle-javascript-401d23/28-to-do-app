@@ -1,23 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NoteItem from './note-item';
 
 export default class NoteList extends React.Component {
   render() {
+    const { notes, handleRemoveNote } = this.props;
     return (
       <div>
         <h3>My To-Do Items:</h3>
         {
-          this.props.notes && this.props.notes.length > 0 ?
+          notes && notes.length > 0 ?
             <ul className='note-list'>
               {
-                this.props.notes.map((note) => {
+                notes.map((note) => {
                   return (
                     <NoteItem
                       key={note.id}
                       id={note.id}
-                      handleRemoveNote={ this.props.handleRemoveNote }
-                      title={note.title}
-                      content={note.content}
+                      handleRemoveNote={ handleRemoveNote }
+                      note={note}
                     />
                   );
                 })
@@ -29,3 +30,8 @@ export default class NoteList extends React.Component {
     );
   }
 }
+
+NoteList.propTypes = {
+  notes: PropTypes.array,
+  handleRemoveNote: PropTypes.func,
+};
