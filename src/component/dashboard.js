@@ -34,7 +34,7 @@ export default class Dashboard extends React.Component {
   handleRemoveNote(noteToRemove) {
     return this.setState((previousState) => {
       return {
-        notes: previousState.notes.filter(note => note.id !== noteToRemove),
+        notes: previousState.notes.filter(note => note.id !== noteToRemove.id),
       };
     });
   }
@@ -47,7 +47,9 @@ export default class Dashboard extends React.Component {
         handleAddNote={this.handleAddNote}
         />
         <NoteList
-        handleRemoveNote={this.handleRemoveNote}/>
+          notes={this.state.notes}
+        handleRemoveNote={this.handleRemoveNote}
+        />
         { this.state.error && <h2 className="error">Enter a Llama note!</h2> }
       </section>
     );

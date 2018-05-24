@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react';
-import autoBind from '../utils';
-import NoteItem from './note.item';
+import autoBind from '../utils/index';
+import NoteItem from './note-item';
 
 export default class NoteList extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ export default class NoteList extends React.Component {
         {
           !this.props.notes ?
             <div>
-              <p>is empty</p>
+              <p>The note list is empty</p>
             </div> :
             <div>
               {this.handleNoteList()}
