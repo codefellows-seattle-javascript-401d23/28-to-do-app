@@ -1,20 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
+
+const emptyState = {
+  title: '',
+  content: '',
+};
 
 export default class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: '',
-      content: '',
-    };
+    this.state = this.props.note ? this.props.note : emptyState;
     autoBind.call(this, NoteForm);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleAddNote(this.state); // eslint-disable-line
+    this.props.handleAddNote(this.state);
   }
 
   handleChange(event) {
@@ -24,6 +27,7 @@ export default class NoteForm extends React.Component {
     });
   }
   render() {
+    const buttonText = this.props.note ? 'Update' : 'Create';
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -43,8 +47,12 @@ export default class NoteForm extends React.Component {
         />
         <br/>
 
-        <button type="submit">CreateNote</button>
+        <button type="submit">{buttonText} Note</button>
       </form>
     );
   }
+}
+NoteForm.propTypes = {
+  note: PropTypes.object,
+  handleAddNote: PropTypes.func,
 }
