@@ -9,7 +9,6 @@ export default class NoteForm extends React.Component {
       title: '',
       content: '',
     }
-
     autoBind.call(this, NoteForm);
   }
 
@@ -19,9 +18,7 @@ export default class NoteForm extends React.Component {
   }
 
   handleChange(event) {
-    // optional ES6 destructuring here. We know event.target has name and value properties
     const { name, value } = event.target;
-    // this bracket notation denotes a computed value or a dynamic property name
     this.setState({
       [name]: value,
     });
@@ -36,6 +33,7 @@ export default class NoteForm extends React.Component {
           value={this.state.title}
           onChange={this.handleChange}
         />
+        <br/>
         <input
           type='text'
           name='content'
@@ -43,6 +41,7 @@ export default class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
+        <br/>
 
         <button type="submit">CreateNote</button>
       </form>
