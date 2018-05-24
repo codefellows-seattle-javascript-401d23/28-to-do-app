@@ -1,0 +1,40 @@
+$background-color: rgb(59, 170, 255);
+$font-color: rgb(0, 32, 58);
+$error: #2d65ff;
+$search-form: #c7e5f3;
+
+html, body {
+  background: $background-color;
+}
+
+h1, h2, p, ul {
+  color: $font-color;
+}
+
+.error  input {
+  border: 3px solid red;
+}
+input {
+  height: 30px;
+  width: 200px;
+}
+input {
+  margin-right: 10px;
+}
+.search-form {
+  color: $search-form;
+}
+button {
+  margin-left: 5%;
+  background: #3498db;
+  height: 40px;
+  width: 100px;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}

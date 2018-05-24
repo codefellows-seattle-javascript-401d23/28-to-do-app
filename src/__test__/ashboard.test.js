@@ -1,0 +1,15 @@
+'use strict';
+
+import React from 'react';
+import { configure, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Dashboard from './../component/dashboard/dashboard';
+
+configure({ adapter: new Adapter() });
+
+describe('Dashboard test stuff', () => {
+  test('should pass, ideally... if notes is empty array', () => {
+    const mountedDashboard = mount(<Dashboard />);
+    expect(mountedDashboard.state('notes')).toEqual([]);
+  });
+});
