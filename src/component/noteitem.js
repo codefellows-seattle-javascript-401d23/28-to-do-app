@@ -17,10 +17,10 @@ export default class NoteItem extends React.Component {
   render() {
     return (
       <li className = 'noteItem'>
-        <button id = { this.props.id } onClick = {this.handleRemove }> Finished? </button>
         <div>
           <h2> { this.props.title } </h2>
           <p> { this.props.content } </p>
+          <button id = { this.props.id } onClick = {this.handleRemove }> Finished? </button>
         </div>
       </li>
     );

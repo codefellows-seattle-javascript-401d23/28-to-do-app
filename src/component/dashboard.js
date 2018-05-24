@@ -40,23 +40,6 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    localStorage.notes = JSON.stringify(this.state.notes);
-  }
-
-  componentDidMount() {
-    if (localStorage.notes) {
-      try {
-        const notes = JSON.parse(localStorage.notes);
-        return this.setState({ notes });
-      } catch (error) {
-        return console.error(error);
-      }
-    } else {
-      return null;
-    }
-  }
-
   render() {
     return (
       <section className = 'dashboard'>

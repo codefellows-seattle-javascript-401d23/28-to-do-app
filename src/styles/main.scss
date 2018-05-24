@@ -1,3 +1,27 @@
-$background-color: #000000;
-$font-color: #FFFFFF;
+$background-color: orange;
+$font-color: #000000;
+$note-background: lightblue;
+$note-text: blue;
 $error: #ff0000;
+
+body {
+  background: $background-color;
+}
+
+h1, h2, p, ul, li {
+  color: $font-color;
+  list-style-type: none;
+}
+
+input {
+  margin-right: 2vw;
+  width: 25%;
+  padding: .6vw;
+}
+
+.noteItem {
+  background: $note-background;
+  width: 50%;
+  padding: 2vw;
+  border: solid white 3px;
+}
