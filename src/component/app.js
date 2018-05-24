@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Dashboard from './dashboard';
+import Landing from './landing';
 import '../../styles/main.scss';
 
 export default class App extends React.Component {
@@ -10,7 +11,7 @@ export default class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1>Landing</h1>
+              <h1>To-Do List</h1>
               <nav>
                 <ul>
                   <li><Link to="/">Home</Link></li>
@@ -21,7 +22,7 @@ export default class App extends React.Component {
             <Route
               exact
               path="/"
-              component={() => <h1>I am your landing page</h1>}
+              component={Landing}
             />
             <Route
               exact
