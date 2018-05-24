@@ -16,12 +16,12 @@ webpackConfig.output = {
 };
 
 webpackConfig.plugins = [
-    new HtmlWebpackPlugin({
-      title: 'Josh\'s Expense Tracker',
-    }),
-    new MiniCssPlugin({
-      filename: '[name].[hash].css',
-    }),
+  new HtmlWebpackPlugin({
+    title: 'UA NOTES',
+  }),
+  new MiniCssPlugin({
+    filename: '[name].[hash].css',
+  }),
 ];
 
 webpackConfig.module = {};
@@ -29,7 +29,7 @@ webpackConfig.module.rules = [
   {
     test: /\.(png|svg|jpg|gif)$/,
     use: [
-        'file-loader',
+      'file-loader',
     ],
   },
   {
@@ -47,9 +47,9 @@ webpackConfig.module.rules = [
   {
     test: /\.scss$/,
     use: [
-        MiniCssPlugin.loader,
-        'css-loader',
-        'sass-loader',
+      MiniCssPlugin.loader,
+      'css-loader',
+      'sass-loader',
     ],
   },
 ];
