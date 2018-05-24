@@ -1,10 +1,15 @@
 {
-  "name": "todo-app",
+  "name": "todo-app-lab29",
   "version": "1.0.0",
   "description": "A Todo App built with React",
   "scripts": {
     "watch": "webpack-dev-server --config webpack.dev.js",
     "test": "eslint . && jest --coverage --forceExit --runInBand"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/src/__test__?mock-asset.js"
+    }
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

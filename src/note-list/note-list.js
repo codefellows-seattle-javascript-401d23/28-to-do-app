@@ -2,7 +2,7 @@
 
 import React from 'react';
 import autoBind from '../utils/index';
-import NoteItem from './note-item';
+import NoteItem from '../note-item/note-item';
 
 export default class NoteList extends React.Component {
   constructor(props) {

@@ -2,8 +2,8 @@
 
 import React from 'react';
 import uuid from 'uuid/v4';
-import NoteForm from './note-form';
-import NoteList from './note-list';
+import NoteForm from '../note-form/note-form';
+import NoteList from '../note-list/note-list';
 import autoBind from '../utils/index';
 
 export default class Dashboard extends React.Component {
@@ -23,11 +23,9 @@ export default class Dashboard extends React.Component {
       return this.setState({ error: true });
     }
 
-    note.id = uuid();
-
     return this.setState((previousState) => {
       return {
-        notes: [...previousState.notes, note],
+        notes: [...previousState.notes, { ...note, id: uuid() }],
       };
     });
   }
@@ -59,7 +57,6 @@ export default class Dashboard extends React.Component {
         <NoteList
           notes={this.state.notes}
         handleRemoveNote={this.handleRemoveNote}
-          handleUpdateNote={this.handleUpdatedNote}
         />
         { this.state.error && <h2 className="error">Enter a Llama note!</h2> }
       </section>
