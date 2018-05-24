@@ -31,9 +31,7 @@ export default class Dashboard extends React.Component {
 
   handleDeleteNote(event) {
     event.preventDefault();
-    console.log('in handleDeleteNote method');
     const idToDelete = event.target.id;
-    console.log('idToDelete: ', idToDelete);
     return this.setState((previousState) => {
       return {
         notes: previousState.notes.filter((note) => {

@@ -5,8 +5,8 @@ export default class NoteList extends React.Component {
   render() {
     return (
       <NoteItem
-        notes={this.props.notes}
-       handleDeleteNote={this.props.handleDeleteNote}
+        notes={this.props.notes} // eslint-disable-line
+       handleDeleteNote={this.props.handleDeleteNote} // eslint-disable-line
       />
     );
   }

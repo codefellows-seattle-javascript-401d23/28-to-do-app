@@ -8,13 +8,13 @@ export default class NoteForm extends React.Component {
     this.state = {
       title: '',
       content: '',
-    }
+    };
     autoBind.call(this, NoteForm);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleAddNote(this.state);
+    this.props.handleAddNote(this.state); // eslint-disable-line
   }
 
   handleChange(event) {
