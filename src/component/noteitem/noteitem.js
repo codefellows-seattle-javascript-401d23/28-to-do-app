@@ -29,8 +29,10 @@ export default class NoteItem extends React.Component {
 }
 
 NoteItem.propTypes = {
+  note: PropTypes.object,
   title: PropTypes.string,
   content: PropTypes.string,
   id: PropTypes.number,
   handleRemoveNote: PropTypes.func,
+  handleUpdateNode: PropTypes.func,
 };

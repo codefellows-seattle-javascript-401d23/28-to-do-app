@@ -17,6 +17,7 @@ export default class NoteList extends React.Component {
                     key = { note.id }
                     id = { note.id }
                     handleRemoveNote = { this.props.handleRemoveNote }
+                    handleUpdateNote = { this.props.handleUpdateNote }
                     title = { note.title }
                     content = { note.content }
                   />
@@ -34,4 +35,5 @@ export default class NoteList extends React.Component {
 NoteList.propTypes = {
   notes: PropTypes.object,
   handleRemoveNote: PropTypes.func,
+  handleUpdateNote: PropTypes.func,
 };

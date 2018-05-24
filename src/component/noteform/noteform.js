@@ -35,6 +35,7 @@ export default class NoteForm extends React.Component {
   }
 
   render() {
+    const buttonText = this.props.note ? 'Update' : 'Create';
     return (
       <form onSubmit = { this.handleSubmit }>
         <input
@@ -51,7 +52,7 @@ export default class NoteForm extends React.Component {
           value = { this.state.content }
           onChange = { this.handleChange }
         />
-        <button type = 'submit'> Create To-Do Item </button>
+        <button type = 'submit'> { buttonText } To-Do Item </button>
       </form>
     );
   }
@@ -59,4 +60,5 @@ export default class NoteForm extends React.Component {
 
 NoteForm.propTypes = {
   handleAddNote: PropTypes.func,
+  note: PropTypes.object,
 };
