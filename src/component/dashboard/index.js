@@ -31,12 +31,6 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  handleTotalPrice() {
-    return this.state.expenses.reduce((sum, expense) => {
-      return sum + Number(expense.price);
-    }, 0);
-  }
-
   handleExpensesList() {
     return (
         <ul>
@@ -44,7 +38,7 @@ export default class Dashboard extends React.Component {
             this.state.expenses.map((expense) => {
               return (
                   <li key={expense.id}>
-                    {expense.title} : ${expense.price}
+                    {expense.title} : ${expense.content}
                   </li>
               );
             })
@@ -62,7 +56,6 @@ export default class Dashboard extends React.Component {
           />
           { this.state.error && <h2 className="error">You must enter a title.</h2> }
           { this.handleExpensesList() }
-          <p> Your total costs are: ${ this.handleTotalPrice() }</p>
         </section>
     );
   }

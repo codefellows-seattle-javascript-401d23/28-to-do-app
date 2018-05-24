@@ -7,7 +7,7 @@ export default class ExpenseForm extends React.Component {
 
     this.state = {
       title: '',
-      price: 0,
+      content: '',
     };
 
     autoBind.call(this, ExpenseForm);
@@ -36,13 +36,13 @@ export default class ExpenseForm extends React.Component {
             onChange={this.handleChange}
             />
           <input
-            type='number'
-            name='price'
-            placeholder='price'
-            value={this.state.price}
+            type='textArea'
+            name='content'
+            placeholder='content'
+            value={this.state.content}
             onChange={this.handleChange}
             />
-          <button type='submit'>Create Expense</button>
+          <button type='submit'>Create Note</button>
         </form>
     );
   }
