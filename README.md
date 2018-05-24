@@ -29,7 +29,7 @@ App
 #### Dashboard Component 
 * The dashboard component should manage the entire **application state**. 
 * The state should contain a notes array
-* It should have a bound `addNote(note)` method that adds a note to `state.notes`
+* It should have a bound `handleAddNote(note)` method that adds a note to `state.notes`
   * each note that is added should have the following data
     * `id`: always should contain the result of `uuid.v1()`
     * `content`: user provided content
