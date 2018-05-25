@@ -19,4 +19,18 @@
   button:hover {
     border: 1px solid $dark-background;
   }
+  .instructions {
+    float: right;
+    font-size: 8px;
+    display: none;
+  }
+}
+
+.note-item:hover {
+  box-shadow: 3px 3px $dark-background;
+
+  .instructions {
+    display: block;
+    margin: 0 30px;
+  }
 }

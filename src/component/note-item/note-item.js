@@ -19,6 +19,7 @@ export default class NoteItem extends React.Component {
           <button id={ note.id } onClick={ handleRemoveNote.bind(null, note) }>
             mark as complete
           </button>
+          <p className='instructions'><em>double click to edit</em></p>
           <div>
             <h3>{ note.title }</h3>
             <p>{ note.content }</p>
