@@ -2,22 +2,25 @@
 
 import React from 'react';
 import autoBind from './../../utils/utils';
+import './note-form.scss';
+
+const emptyState = {
+  title: '',
+  content: '',
+}
 
 export default class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: '',
-      content: '',
-    };
+    this.state = this.props.note ? this.props.note : emptyState;
 
     autoBind.call(this, NoteForm);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleAddNote(this.state);
+    this.props.handleComplete(this.state);
   }
 
   handleChange(event) {
@@ -44,7 +47,7 @@ export default class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <button type="submit">Create Note</button>
+        <button type="submit">Add Note</button>
       </form>
     );
   }

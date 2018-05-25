@@ -7,6 +7,11 @@
     "test": "jest",
     "watch": "webpack-dev-server --config webpack.dev.js"
   },
+  "jest": {
+  "moduleNameMapper": {
+  "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
+  }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -32,6 +37,7 @@
     "node-sass": "^4.9.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.4.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.3",

@@ -24,11 +24,10 @@ export default class Dashboard extends React.Component {
     }
 
     note.createdOn = new Date();
-    note.id = uuid();
 
     return this.setState((previousState) => {
       return {
-        notes: [...previousState.notes, note],
+        notes: [...previousState.notes, { ...note, id: uuid() }],
         error: null,
       };
     });
@@ -46,14 +45,27 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  handleUpdateNote(noteToUpdate) {
+    return this.setState((previousState) => {
+      const updatedNotes = previousState.notes.map((note) => {
+        return noteToUpdate.id === note.id ? noteToUpdate : note;
+      });
+      return {
+        notes: updatedNotes,
+        error: null,
+      }
+    });
+  }
+
   render() {
     return (
       <section className="dashboard">
-        <h2>New Note Form</h2>
-        <NoteForm handleAddNote={this.handleAddNote}/>
-        <p>TODO List</p>
-        { this.state.error && <h2 className="error">Each note must have a title!</h2>}
-        <NotesList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote}/>
+        <h1>New Note Form</h1>
+        <NoteForm handleComplete={this.handleAddNote}/>
+        <hr />
+        <h2>TODO List</h2>
+        { this.state.error && <h3 className="error">Each note must have a title!</h3>}
+        <NotesList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} handleUpdateNote={this.handleUpdateNote}/>
       </section>
     );
   }
