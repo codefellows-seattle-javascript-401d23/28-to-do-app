@@ -4,7 +4,7 @@ import autoBind from '../../utils/index';
 
 const emptyState = {
   title: '',
-  price: 0,
+  content: '',
 };
 
 export default class NoteForm extends React.Component {
