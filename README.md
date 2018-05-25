@@ -10,3 +10,7 @@ To use:
 - Landing page will show a brief description of what the app does
 - Navigate to dashboard to enter new to-do items onto list, title is required for new notes
 - When finished, click on `finished?` button on item to clear it from list
+
+## Functionality not yet working
+
+- When double clicking on note item content, you will be taken to an edit page where you can make changes to your note

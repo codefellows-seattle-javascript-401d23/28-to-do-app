@@ -1,38 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autoBind from '../../utils/autobind';
+import NoteForm from '../noteform/noteform';
+import Modal from '../modal/modal';
 
 export default class NoteItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-    autoBind.call(this, NoteItem);
-  }
-
-  handleRemove(event) {
-    event.preventDefault();
-    const { id } = event.target;
-    this.props.handleRemoveNote(id);
-  }
-
   render() {
+    const { note, handleRemoveNote, handleUpdateNote } = this.props;
+
+    const showModal = () => handleUpdateNote({ ...note, editing: true });
+    const hideModal = () => handleUpdateNote({ ...note, editing: false });
+    const updateAndClose = (updatedNote) => {
+      handleUpdateNote({ ...updatedNote, id: note.id, editing: false });
+    };
+
     return (
-      <li className = 'noteItem'>
-        <div>
-          <h2> { this.props.title } </h2>
-          <p> { this.props.content } </p>
-          <button id = { this.props.id } onClick = {this.handleRemove }> Finished? </button>
-        </div>
-      </li>
+      <div>
+        <li className = 'noteItem'>
+            <h2> { note.title } </h2>
+            <p onDoubleClick = { showModal }> { note.content } </p>
+            <button id = { note.id } onClick = { handleRemoveNote.bind(null, note) }>
+             Finished? </button>
+        </li>
+        <Modal show = { note.editing } handleClose = { hideModal }>
+          <NoteForm handleAddNote = { updateAndClose } note = { note } />
+        </Modal>
+      </div>
     );
   }
 }
 
 NoteItem.propTypes = {
   note: PropTypes.object,
-  title: PropTypes.string,
-  content: PropTypes.string,
-  id: PropTypes.number,
   handleRemoveNote: PropTypes.func,
-  handleUpdateNode: PropTypes.func,
+  handleUpdateNote: PropTypes.func,
 };

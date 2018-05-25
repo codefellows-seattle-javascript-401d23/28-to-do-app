@@ -4,11 +4,12 @@ import NoteItem from '../noteitem/noteitem';
 
 export default class NoteList extends React.Component {
   render() {
+    const { notes, handleRemoveNote, handleUpdateNote } = this.props;
     return (
       <div>
         <h2> Things I need to do: </h2>
         {
-          this.props.notes && this.props.notes.length > 0 ?
+          notes && notes.length > 0 ?
           <ul className = 'noteList'>
             {
               this.props.notes.map((note) => {
@@ -16,8 +17,8 @@ export default class NoteList extends React.Component {
                   <NoteItem 
                     key = { note.id }
                     id = { note.id }
-                    handleRemoveNote = { this.props.handleRemoveNote }
-                    handleUpdateNote = { this.props.handleUpdateNote }
+                    handleRemoveNote = { handleRemoveNote }
+                    handleUpdateNote = { handleUpdateNote }
                     title = { note.title }
                     content = { note.content }
                   />
@@ -33,7 +34,7 @@ export default class NoteList extends React.Component {
 }
 
 NoteList.propTypes = {
-  notes: PropTypes.object,
+  notes: PropTypes.array,
   handleRemoveNote: PropTypes.func,
   handleUpdateNote: PropTypes.func,
 };
