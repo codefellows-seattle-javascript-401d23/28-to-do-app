@@ -2,6 +2,7 @@ import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from './note-form/index';
 import NoteList from './note-list/index';
+import NoteItem from './note-list/note-item/index';
 import autoBind from '../../utils';
 
 export default class Dashboard extends React.Component {
@@ -10,7 +11,6 @@ export default class Dashboard extends React.Component {
 
     this.state = {
       notes: [],
-      expenses: [],
       error: null,
     };
 
@@ -29,14 +29,26 @@ export default class Dashboard extends React.Component {
         error: null,
       };
     });
-
   }
 
-  // handleRemoveNote(note) {
-  //   if (!note) {
-  //     return this.setState({ error: true });
-  //   }
-  // }
+  handleRemoveNote(noteToRemove) {
+    this.setState((previousState) => {
+      return {
+        notes: previousState.notes.filter(note =>
+          note.id !== noteToRemove.id),
+      };
+    });
+  }
+
+  handleUpdateNote(noteToUpdate) {
+    console.log(noteToUpdate);
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(note =>
+          (note.id === noteToUpdate.id ? noteToUpdate : note)),
+      };
+    });
+  }
 
   handleNoteList() {
     return (
@@ -45,7 +57,11 @@ export default class Dashboard extends React.Component {
           this.state.notes.map((note) => {
             return (
               <li key={note.id}>
-                {note.title} : {note.content}
+                <NoteItem
+                  note={note}
+                  handleRemoveNote={this.handleRemoveNote}
+                  handleUpdateNote={this.handleUpdateNote}
+                  />
               </li>
             );
           })
@@ -59,10 +75,10 @@ export default class Dashboard extends React.Component {
       <section className="dashboard">
         <h2>Add Note</h2>
         <NoteForm
-          handleAddNote={this.handleAddNote}
+          handleComplete={this.handleAddNote}
         />
         { this.state.error && <h2 className="error">You must enter a title.</h2> }
-
+        { this.handleNoteList() }
       <div><br /><br />
         <NoteList notesFromParent={ this.handleNoteList() }/>
       </div>

@@ -4,7 +4,7 @@
   "description": "401 JS --  Lab 28 Todo ===",
   "scripts": {
     "watch": "webpack-dev-server --config webpack.dev.js",
-    "test": "jest"
+    "test": "eslint . && jest --coverage --forceExit"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -26,8 +26,10 @@
     "jest": "^22.4.4",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.4.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.3",
@@ -37,8 +39,7 @@
   },
   "dependencies": {
     "react-router-dom": "^4.2.2",
-    "uuid": "^3.2.1",
-    "y": "^0.3.2"
+    "uuid": "^3.2.1"
   },
   "keywords": [],
   "author": "",

@@ -7,5 +7,5 @@ export default function autoBind(classComponent) {
     if (method.startsWith('handle')) {
       this[method] = this[method].bind(this);
     }
-  }))
+  }));
 }

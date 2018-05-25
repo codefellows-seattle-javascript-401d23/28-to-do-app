@@ -54,4 +54,3 @@ webpackConfig.module.rules = [
   },
 ];
 
-
