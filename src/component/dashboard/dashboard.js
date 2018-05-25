@@ -55,7 +55,7 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <section className="dashboard">
-        <h1>To-Do List Dashboard</h1>
+        <h2>Dashboard</h2>
         <NoteForm
         handleComplete={this.handleAddNote}
         />

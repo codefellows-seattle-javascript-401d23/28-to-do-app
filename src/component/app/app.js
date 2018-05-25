@@ -11,7 +11,8 @@ export default class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1>To-Do List</h1>
+              <h1>Jennifer&#39;s Ephemeral List</h1>
+              <p><em>Type in your troubles and watch them disappear like magic!</em></p>
               <nav>
                 <ul>
                   <li><Link to="/">Home</Link></li>

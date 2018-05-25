@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
+import './note-form.scss';
 
 const emptyState = {
   title: '',

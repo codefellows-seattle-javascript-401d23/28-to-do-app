@@ -1,15 +1,31 @@
 @import 'vars';
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700');
 
-html, body {
-  max-width: 550px;
+body {
+  max-width: 650px;
   margin: 1rem auto;
+  padding: 0.5rem 2rem;
+  border: 1px solid;
+  border-radius: 10px;
   font-family: sans-serif;
   font-size: 18px;
   background: $background-color;
+  min-height: 80vh;
 }
 
 p, h1, h2, h3, ul {
   color: $font-color;
+}
+ul {
+  padding-left: 0;
+}
+
+h1 + p {
+  margin-top: 0;
+}
+h1, h2{
+  font-family:'Dancing Script', cursive;
+  margin-bottom: 0.3em;
 }
 
 .error {
@@ -21,7 +37,6 @@ main {
 }
 
 input, button {
-  border: 2px solid #fff;
   font-size: 1em;
   margin-bottom: 0.5em;
   padding: 0.3em 1.2em;
@@ -29,17 +44,28 @@ input, button {
 }
 button {
   border-color: $accent-color-1;
+  background-color: $accent-color-1;
+  color: #fff;
+  margin-right: 0.5em;
   &:hover, &:focus {
     opacity: 0.8;
   }
 }
 nav {
   li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 0.5em;
+    border-left: 1px solid $nav-link-color;
+    &:first-of-type{
+      border-left: none;
+      padding-left: 0;
+    }
     a {
       color: $nav-link-color;
       text-decoration: none;
       &:hover, &:focus{
-        color: $accent-color-1;
+        color: $nav-link-hover-color;
       }
     }
   }
