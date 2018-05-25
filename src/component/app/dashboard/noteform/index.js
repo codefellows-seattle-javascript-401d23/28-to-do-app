@@ -27,6 +27,7 @@ export default class NoteForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.note);
     return (
       <form onSubmit={this.handleSubmit} className='noteForm'>
         <input 
@@ -35,8 +36,9 @@ export default class NoteForm extends React.Component {
           placeholder="What-To-Do?"
           value={this.state.content}
           onChange={this.handleChange}
-        />
+        />{
         <button type="submit">Create Note</button>
+        }
       </form>
     );
   }
@@ -44,4 +46,5 @@ export default class NoteForm extends React.Component {
 
 NoteForm.propTypes = {
   add: PropTypes.func,
+  note: PropTypes.object,
 };

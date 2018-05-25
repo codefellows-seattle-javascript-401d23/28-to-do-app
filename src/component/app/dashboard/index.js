@@ -38,11 +38,20 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  handleUpdate(noteToUpdate) {
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(note => 
+          (note.id === noteToUpdate.id ? noteToUpdate : note)),
+      };
+    });
+  }
+
   render() {
     return (
       <div>
         <NoteForm add={this.handleAdd}/>
-        <NoteList remove={this.handleRemove} notes={this.state.notes}/>
+        <NoteList remove={this.handleRemove} notes={this.state.notes} update={this.handleUpdate}/>
       </div>
     );
   }

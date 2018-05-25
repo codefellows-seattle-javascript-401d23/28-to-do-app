@@ -15,7 +15,12 @@ export default class NoteList extends React.Component {
           <ul>
             { this.props.notes.map((note) => {
               return (
-                <NoteItem key={note.id} note={note} remove={this.props.remove}/>
+                <NoteItem 
+                key={note.id} 
+                note={note} 
+                remove={this.props.remove} 
+                update={this.props.update}
+                />
               );
             })}
           </ul> :
@@ -31,4 +36,5 @@ export default class NoteList extends React.Component {
 NoteList.propTypes = {
   remove: PropTypes.func,
   notes: PropTypes.object,
+  update: PropTypes.func,
 };
