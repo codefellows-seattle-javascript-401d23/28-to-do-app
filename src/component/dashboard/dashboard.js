@@ -2,9 +2,9 @@
 
 import React from 'react';
 import uuid from 'uuid/v4';
-import NoteList from './note/note-list';
-import NoteForm from './note/note-form';
-import autoBind from '../utils/index';
+import NoteList from '../note-list/note-list';
+import NoteForm from '../note-form/note-form';
+import autoBind from '../../utils/index';
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -23,12 +23,9 @@ export default class Dashboard extends React.Component {
       return this.setState({ error: true });
     }
 
-    note.createdOn = new Date();
-    note.id = uuid();
-
     return this.setState((previousState) => {
       return {
-        notes: [...previousState.notes, note],
+        notes: [...previousState.notes, { ...note, id: uuid() }],
         error: null,
       };
     });
@@ -42,16 +39,26 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  handleUpdateNote(noteToUpdate) {
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(note => 
+          (note.id === noteToUpdate.id ? noteToUpdate : note)),
+      };
+    });
+  }
+
   render() {
     return (
       <section className="dashboard">
         <h1>To-Do List</h1>
         <NoteForm 
-          handleAddNote={this.handleAddNote}
+          handleComplete={this.handleAddNote}
           />
         <NoteList
         notes={this.state.notes}
         handleRemoveNote={this.handleRemoveNote}
+        handleUpdateNote={this.handleUpdateNote}
         />
         { this.state.error && <h2 className="error">You must enter a title.</h2> }
       </section>

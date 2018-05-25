@@ -3,7 +3,7 @@
 import React from 'react';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import NoteForm from '../component/note/note-form';
+import NoteForm from '../component/note-form/note-form';
 
 configure({ adapter: new Adapter() });
 

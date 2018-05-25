@@ -1,8 +1,9 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import autoBind from '../../utils/index';
-import NoteItem from './note-item';
+import NoteItem from '../note-item/note-item';
 
 export default class NoteList extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export default class NoteList extends React.Component {
               note={note}
               id={note.id}
               handleRemoveNote={this.props.handleRemoveNote}
+              handleUpdateNote={this.props.handleUpdateNote}
               />
             );
           })
@@ -45,3 +47,9 @@ export default class NoteList extends React.Component {
     );
   }
 }
+
+NoteList.propTypes = {
+  notes: PropTypes.array,
+  handleRemoveNote: PropTypes.func,
+  handleUpdateNote: PropTypes.func,
+};

@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import autoBind from '../utils/index';
+import autoBind from '../../utils/index';
 
 export default class Landing extends React.Component {
   constructor(props) {
