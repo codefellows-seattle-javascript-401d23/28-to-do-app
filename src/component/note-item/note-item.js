@@ -13,7 +13,7 @@ export default class NoteItem extends React.Component {
 
     const updateAndClose = (updatedNote) => {
       handleUpdateNote({ ...updatedNote, editing: false });
-    }
+    };
 
     return (
       <li className='note-item'>

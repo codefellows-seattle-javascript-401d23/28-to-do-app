@@ -17,4 +17,6 @@ At `http://localhost:8080/` the landing page will show with a very brief introdu
 Click on the Dashboard link to navigate to the dashboard at `http://localhost:8080/dashboard`.
 This will show a form to create new notes with a title(optional) and text content(required).
 
-Notes are displayed in a list as they are created, with a Delete button for each individual note. Click the Delete button to remove that note from the list.
+Notes are displayed in a list as they are created, with a Delete button and an Edit Button for each individual note. 
+Click the Edit button to show a pop-up modal allowing editing of the note. 
+Click the Delete button to remove that note from the list.

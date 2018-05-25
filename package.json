@@ -19,6 +19,11 @@
     "url": "https://github.com/jenwill/to-do-app/issues"
   },
   "homepage": "https://github.com/jenwill/to-do-app#readme",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
+    }
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",

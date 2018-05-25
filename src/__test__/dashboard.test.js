@@ -11,3 +11,11 @@ describe('Dashboard testing', () => {
     expect(mountedDashboard.state('notes')).toEqual([]);
   });
 });
+test('The dashboard should display Dashboard', () => {
+  const mountedDashboard = mount(<Dashboard />);
+  expect(mountedDashboard.find('h2').text()).toEqual('Dashboard');
+});
+test('The dashboard should contain a NoteForm', () => {
+  const mountedDashboard = mount(<Dashboard />);
+  expect(mountedDashboard.find('NoteForm')).toBeTruthy();
+});
