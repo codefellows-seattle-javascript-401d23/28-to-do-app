@@ -30,20 +30,4 @@ export default class NoteList extends React.Component {
       </ul>
     );
   }
-
-  // render() {
-  //   return (
-  //     <section className="noteList">
-  //       {
-  //         !this.props.notes ?
-  //           <div>
-  //             <p>The note list is empty</p>
-  //           </div> :
-  //           <div>
-  //             {this.handleNoteList()}
-  //           </div>
-  //       }
-  //       </section>
-  //   );
-  // }
 }

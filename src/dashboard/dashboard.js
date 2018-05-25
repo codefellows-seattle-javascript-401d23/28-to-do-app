@@ -42,7 +42,6 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  // TODO:  added during lecture missing something in the note-item module....
   handleUpdateNote(noteToUpdate) {
     return this.setState((previousState) => {
       return {
@@ -58,7 +57,7 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <section className="dashboard">
-        <h1>Llama Done Dashboard</h1>
+        <h1>Dashboard</h1>
         <NoteForm
         handleComplete={this.handleAddNote}
         />
@@ -67,7 +66,7 @@ export default class Dashboard extends React.Component {
           handleRemoveNote={this.handleRemoveNote}
           handleUpdateNote={this.handleUpdateNote}
         />
-        { this.state.error && <h2 className="error">Enter a Llama note!</h2> }
+        { this.state.error && <h2 className="error">Enter a note!</h2> }
       </section>
     );
   }

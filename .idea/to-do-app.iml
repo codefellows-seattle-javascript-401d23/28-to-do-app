@@ -12,5 +12,7 @@
     <orderEntry type="library" name="@types/react" level="application" />
     <orderEntry type="library" name="@types/react-dom" level="application" />
     <orderEntry type="library" name="@types/uuid" level="application" />
+    <orderEntry type="library" name="@types/mini-css-extract-plugin" level="application" />
+    <orderEntry type="library" name="@types/jest" level="application" />
   </component>
 </module>

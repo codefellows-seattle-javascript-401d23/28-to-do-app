@@ -5,7 +5,7 @@ import autoBind from '../utils/index';
 const emptyState = {
   title: '',
   content: '',
-}
+};
 
 export default class NoteForm extends React.Component {
   constructor(props) {
@@ -54,7 +54,7 @@ export default class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <button type="submit">{buttonText} Llama Note</button>
+        <button className=".btn" type="submit">{buttonText} Note</button>
       </form>
     );
   }

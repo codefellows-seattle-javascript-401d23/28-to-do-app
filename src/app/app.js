@@ -12,7 +12,7 @@ export default class App extends React.Component {
           <div>
             <header>
               <h1>
-                Llama Done
+                To Do
               </h1>
               <nav>
                 <ul>
