@@ -5,6 +5,7 @@
   "main": "webpack.common.js",
   "scripts": {
     "test": "jest",
+    "test-coverage": "jest --coverage",
     "watch": "webpack-dev-server --config webpack.dev.js"
   },
   "repository": {
@@ -14,7 +15,10 @@
   "jest": {
     "setupFiles": [
       "./src/__test__/lib/browser-mock.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/src/__test__/lib/mock-asset.js"
+    }
   },
   "keywords": [],
   "author": "",
@@ -48,6 +52,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.4.0",
     "sass-loader": "^7.0.1",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4",
