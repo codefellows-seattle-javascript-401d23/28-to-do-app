@@ -50,7 +50,6 @@ export default class Dashboard extends React.Component {
   }
 
   render() {
-    console.log(this.state.notes);
     return (
       <section className="dashboard">
 

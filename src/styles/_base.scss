@@ -2,13 +2,15 @@
 
 body {
   background: $background-color;
-  font-family: sans-serif;
+  font-family:'Cookie',cursive;
+  font-size:12pt;
   color: $font-color;
 }
 
 a {
   color: $font-color;
   text-decoration: none;
+
 }
 
 a:hover {

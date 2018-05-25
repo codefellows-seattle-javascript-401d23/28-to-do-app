@@ -17,7 +17,6 @@ export default class App extends React.Component {
                 <ul>
                   <li><Link to="/">Landing</Link></li>
                   <li><Link to="/dashboard">Dashboard</Link></li>
-                  <li><Link to="/noteform">NoteForm</Link></li>
                 </ul>
               </nav>
             </header>
