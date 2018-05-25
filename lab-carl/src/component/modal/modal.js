@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import './modal.scss';
 
 export default class Modal extends React.Component {
@@ -15,4 +16,10 @@ export default class Modal extends React.Component {
       </div>
     );
   }
-}
+};
+
+Modal.propTypes = {
+  show: PropTypes.bool,
+  handleClose: PropTypes.func,
+  children: PropTypes.node,
+};

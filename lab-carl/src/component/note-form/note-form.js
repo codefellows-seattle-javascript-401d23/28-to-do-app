@@ -2,6 +2,7 @@
 
 import React from 'react';
 import autoBind from './../../utils/utils';
+import PropTypes from 'prop-types';
 import './note-form.scss';
 
 const emptyState = {
@@ -51,4 +52,9 @@ export default class NoteForm extends React.Component {
       </form>
     );
   }
+};
+
+NoteForm.propTypes = {
+  handleComplete: PropTypes.func,
+  note: PropTypes.object,
 }

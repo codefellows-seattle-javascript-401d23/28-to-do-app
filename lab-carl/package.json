@@ -8,9 +8,9 @@
     "watch": "webpack-dev-server --config webpack.dev.js"
   },
   "jest": {
-  "moduleNameMapper": {
-  "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
-  }
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
+    }
   },
   "keywords": [],
   "author": "",
@@ -35,6 +35,7 @@
     "jest": "^22.4.4",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-test-renderer": "^16.4.0",

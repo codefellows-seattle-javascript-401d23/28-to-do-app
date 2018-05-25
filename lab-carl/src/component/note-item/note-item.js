@@ -3,6 +3,7 @@
 import React from 'react';
 import Modal from '../modal/modal';
 import NoteForm from '../note-form/note-form';
+import PropTypes from 'prop-types';
 import './note-item.scss';
 
 export default class Note extends React.Component {
@@ -32,4 +33,10 @@ export default class Note extends React.Component {
     </section>
     )
   }
-}
+};
+
+Note.propTypes = {
+  note: PropTypes.object,
+  handleRemoveNote: PropTypes.func,
+  handleUpdateNote: PropTypes.func,
+};
