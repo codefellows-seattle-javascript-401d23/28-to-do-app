@@ -1,8 +1,8 @@
 import React from 'react';
 import uuid from 'uuid/v4';
-import NoteForm from './../note-form/index';
+import NoteForm from '../note-form/note-form';
+import NoteList from '../note-list/note-list';
 import autoBind from '../../utils';
-import NoteList from './../note-list/index';
 
 
 export default class Dashboard extends React.Component {
@@ -18,12 +18,11 @@ export default class Dashboard extends React.Component {
     if (note.title === '') {
       return this.setState({ error: true });
     }
-    // note.createdOn = new Date();
-    note.id = uuid(); // created random id and date
+    note.createdOn = new Date();
 
     return this.setState((previousState) => {
       return {
-        notes: [...previousState.notes, note], 
+        notes: [...previousState.notes, { ...note, id: uuid() }], 
         error: null,
       };
     });
@@ -37,16 +36,27 @@ export default class Dashboard extends React.Component {
       };
     });
   }
+  handleUpdateNote(noteToUpdate) {
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(note => 
+          (note.id === noteToUpdate.id ? noteToUpdate : note)),
+      };
+    });
+  }
+
   render() {
     return (
       <section className='dashboard'>
-      <h1> Notes creator</h1>
+      <h2>Notes creator</h2>
       <NoteForm
         handleAddNotes={this.handleAddNotes}
       />
+      { this.state.error && <h2 className="error">You must enter a title.</h2> }
       <NoteList
         notes={this.state.notes}
         handleRemoveItem={this.handleRemoveItem}
+        handleUpdateNote={this.handleUpdateNote}
       />
       </section>
     );

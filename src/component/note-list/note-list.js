@@ -1,11 +1,11 @@
 import React from 'react';
-import NoteItem from './../note-item/index';
+import NoteItem from './../note-item/note-item';
 
 export default class NoteList extends React.Component {
   render() {
     return (
       <section className='note-list'>
-      <h1> Your notes list </h1>
+      <h2> Your notes list </h2>
       <ul> 
         {
           this.props.notes.map((note) => {
@@ -14,6 +14,7 @@ export default class NoteList extends React.Component {
               key={note.id}
               note={note}
               handleRemoveItem={this.props.handleRemoveItem}
+              handleUpdateNote={this.props.handleUpdateNote}
             />
             );
           })
