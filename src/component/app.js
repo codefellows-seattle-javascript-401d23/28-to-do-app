@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Dashboard from './dashboard';
+import Dashboard from './dashboard/dashboard';
 // import NoteItem from './noteitem';
 import '../styles/main.scss';
 

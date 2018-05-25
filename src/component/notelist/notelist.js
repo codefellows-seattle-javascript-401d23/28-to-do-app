@@ -1,9 +1,9 @@
 'use strict';
 
 import React from 'react';
-import NoteItem from './noteitem';
-import '../styles/main.scss';
-import autoBind from '../utils';
+import PropTypes from 'prop-types';
+import NoteItem from '../noteitem/noteitem';
+import autoBind from '../../utils';
 
 export default class NoteList extends React.Component {
   constructor(props) {
@@ -19,6 +19,7 @@ export default class NoteList extends React.Component {
           this.props.notes.map((note) => {
             return (
               <NoteItem 
+              handleUpdateNote={this.props.handleUpdateNote}
               handleRemoveNote={this.props.handleRemoveNote}
               note={note}
               id={note.id}
@@ -47,3 +48,9 @@ export default class NoteList extends React.Component {
     );
   }
 }
+
+NoteList.propTypes = {
+  notes: PropTypes.array,
+  handleRemoveNote: PropTypes.func,
+  handleUpdateNote: PropTypes.func,
+};

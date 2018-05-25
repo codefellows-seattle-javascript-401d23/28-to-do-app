@@ -1,24 +1,26 @@
 'use strict'; 
 
 import React from 'react';
-import autoBind from '../utils/index';
-// import handleAddNote from './dashboard';
+import PropTypes from 'prop-types';
+import autoBind from '../../utils/index';
+
+const emptyState = {
+  title: '',
+  content: '',
+};
 
 export default class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: '',
-      content: '',
-    };
+    this.state = this.props.note ? this.props.note : emptyState; 
 
     autoBind.call(this, NoteForm);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleAddNote(this.state);
+    this.props.handleComplete(this.state);
   }
 
   handleChange(event) {
@@ -29,6 +31,7 @@ export default class NoteForm extends React.Component {
   }
 
   render() {
+    const buttonText = this.props.note ? 'Update Note' : 'Submit Note';
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -45,8 +48,13 @@ export default class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
           />
-        <button type="onSubmit">Submit Note</button>
+        <button type="onSubmit">{ buttonText }</button>
       </form>
     );
   }
 }
+
+NoteForm.propTypes = {
+  note: PropTypes.object,
+  handleComplete: PropTypes.func,
+};

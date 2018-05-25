@@ -2,9 +2,9 @@
 
 import React from 'react';
 import uuid from 'uuid/v4';
-import autoBind from '../utils/index';
-import NoteForm from './noteform';
-import NoteList from './notelist';
+import autoBind from '../../utils/index';
+import NoteForm from '../noteform/noteform';
+import NoteList from '../notelist/notelist';
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -25,8 +25,17 @@ export default class Dashboard extends React.Component {
     
     return this.setState((previousState) => {
       return {
-        notes: [...previousState.notes, note],
+        notes: [...previousState.notes, { ...note, id: uuid() }],
         error: null,
+      };
+    });
+  }
+
+  handleUpdateNote(targetNote) {
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(note => 
+          (note.id === targetNote.id ? targetNote : note)),
       };
     });
   }
@@ -43,8 +52,10 @@ export default class Dashboard extends React.Component {
     return (
       <section className="Dashboard">
         <h2>Note Creating Dashboard</h2>
-        <NoteForm handleAddNote={this.handleAddNote} />
-        <NoteList handleRemoveNote={this.handleRemoveNote} notes={this.state.notes} />
+        <NoteForm handleComplete={this.handleAddNote} />
+        <NoteList handleRemoveNote={this.handleRemoveNote} 
+        handleUpdateNote={this.handleUpdateNote} 
+        notes={this.state.notes} />
       </section>
     );
   }
