@@ -2,7 +2,7 @@
 
 import React from 'react';
 import autoBind from '../utils/index';
-import NoteItem from './note-item';
+import NoteItem from '../note-item/note-item';
 
 export default class NoteList extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class NoteList extends React.Component {
     autoBind.call(this, NoteList);
   }
 
-  handleNoteList() {
+  render() {
     return (
       <ul>
         {
@@ -22,27 +22,12 @@ export default class NoteList extends React.Component {
               note={note}
               id={note.id}
               handleRemoveNote={this.props.handleRemoveNote}
+              handleUpdateNote={this.props.handleUpdateNote}
               />
             );
           })
         }
       </ul>
-    );
-  }
-
-  render() {
-    return (
-      <section className="noteList">
-        {
-          !this.props.notes ?
-            <div>
-              <p>The note list is empty</p>
-            </div> :
-            <div>
-              {this.handleNoteList()}
-            </div>
-        }
-        </section>
     );
   }
 }
