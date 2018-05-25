@@ -23,7 +23,7 @@ export default class NoteItem extends React.Component {
         <button onClick={showModal}>Edit This Note</button>
         <Modal show={note.editing} handleClose={hideModal}>
           <h3>Editing {note.title}</h3>
-          <NoteForm handleAddNote={updateAndClose} note={note} />
+          <NoteForm handleComplete={updateAndClose} note={note} />
         </Modal>
       </li>
     );

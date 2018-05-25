@@ -20,10 +20,9 @@ export default class Dashboard extends React.Component {
     }
 
     note.createdOn = new Date();
-    note.id = uuid();
     return this.setState((previousState) => {
       return {
-        notes: [...previousState.notes, note],
+        notes: [...previousState.notes, { ...note, id: uuid() }],
         error: null,
       };
     });
