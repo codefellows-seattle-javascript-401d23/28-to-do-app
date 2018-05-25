@@ -9,7 +9,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.scss$": "<rootDir>/src/__test__/mock.asset.js"
+      "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
     }
   },
   "repository": {
