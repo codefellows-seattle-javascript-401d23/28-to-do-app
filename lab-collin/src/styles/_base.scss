@@ -1,0 +1,19 @@
+@import 'vars';
+
+body {
+  background: $background-color;
+  font-family: 'Courier New', Courier, monospace;
+  color: $font-color;
+}
+
+a {
+  color: $font-color;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.error {
+  color: $error;
+}

@@ -1,0 +1,16 @@
+$background-color: #bead11;
+$font-color: rgb(0, 0, 0);
+$error: #ff0000;
+
+html, body {
+  background: $background-color;
+}
+
+p, h1, h2, ul {
+  color: $font-color;
+}
+
+.error {
+  color: $error;
+}
+
