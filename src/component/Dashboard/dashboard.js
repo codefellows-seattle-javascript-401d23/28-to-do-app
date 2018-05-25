@@ -18,13 +18,12 @@ export default class Dashboard extends React.Component {
   }
 
   handleAddNote(note) {
-    console.log('THIS BUTTON WAS CLKOKAJFAJSDFAJSKDOF', note);
     if (note.title === '') {
       return this.setState({ error: true });
     }
 
 
-    return this.setState((previousState) => { 
+    return this.setState((previousState) => {
       return {
         notes: [...previousState.notes, { ...note, id: uuid() }],
         error: null,
@@ -60,28 +59,27 @@ export default class Dashboard extends React.Component {
           <NoteForm
             handleComplete={this.handleAddNote}
           />
-          { this.state.error && <h2 className="error">You must enter a title</h2> }
-          </div>
-        {this.state.notes.length > 0 ?
-        <div><p>All notes:</p>       
-        <ul>
-          {
-            this.state.notes.map((note) => {
-              return (
-                <li key={note.id}>
-                  <NoteItem
-                    note={note}
-                    handleRemoveNote={this.handleRemoveNote}
-                    handleUpdateNote={this.handleUpdateNote}
-                  />
-                  {note.content} : {note.title}
-                </li>
-              );
-            })
-          }
-        </ul>
+          {this.state.error && <h2 className="error">You must enter a title</h2>}
         </div>
-        : null
+        {this.state.notes.length > 0 ?
+          <div><p>All notes:</p>
+            <ul>
+              {
+                this.state.notes.map((note) => {
+                  return (
+                    <li key={note.id}>
+                      <NoteItem
+                        note={note}
+                        handleRemoveNote={this.handleRemoveNote}
+                        handleUpdateNote={this.handleUpdateNote}
+                      />
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
+          : null
         }
       </section>
     );
