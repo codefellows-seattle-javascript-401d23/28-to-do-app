@@ -11,7 +11,7 @@ export default class NoteList extends React.Component {
     autoBind.call(this, NoteList);
   }
 
-  handleNoteList() {
+  render() {
     return (
       <ul>
         {
@@ -22,6 +22,7 @@ export default class NoteList extends React.Component {
               note={note}
               id={note.id}
               handleRemoveNote={this.props.handleRemoveNote}
+              handleUpdateNote={this.props.handleUpdateNote}
               />
             );
           })
@@ -30,19 +31,19 @@ export default class NoteList extends React.Component {
     );
   }
 
-  render() {
-    return (
-      <section className="noteList">
-        {
-          !this.props.notes ?
-            <div>
-              <p>The note list is empty</p>
-            </div> :
-            <div>
-              {this.handleNoteList()}
-            </div>
-        }
-        </section>
-    );
-  }
+  // render() {
+  //   return (
+  //     <section className="noteList">
+  //       {
+  //         !this.props.notes ?
+  //           <div>
+  //             <p>The note list is empty</p>
+  //           </div> :
+  //           <div>
+  //             {this.handleNoteList()}
+  //           </div>
+  //       }
+  //       </section>
+  //   );
+  // }
 }

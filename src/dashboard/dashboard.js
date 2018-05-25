@@ -64,7 +64,7 @@ export default class Dashboard extends React.Component {
         />
         <NoteList
           notes={this.state.notes}
-        handleRemoveNote={this.handleRemoveNote}
+          handleRemoveNote={this.handleRemoveNote}
           handleUpdateNote={this.handleUpdateNote}
         />
         { this.state.error && <h2 className="error">Enter a Llama note!</h2> }

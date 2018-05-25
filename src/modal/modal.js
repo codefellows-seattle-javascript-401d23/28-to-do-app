@@ -9,6 +9,7 @@ export default class Modal extends React.Component {
       <div className={showHideClassName}>
         <main className='modal-main'>
           <button onClick={this.props.handleClose}> close </button>
+          {this.props.children}
         </main>
       </div>
     );
@@ -19,4 +20,4 @@ Modal.propTypes = {
   show: PropTypes.bool,
   handleClose: PropTypes.func,
   children: PropTypes.node,
-};
+}
