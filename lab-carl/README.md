@@ -2,7 +2,7 @@
 
 ## Overview
 
-This lab project focused on building a simple note list application. Notes can be added to the list with the note form and removed by clicking the 'remove' button next to each item. In Lab 29, functionality was added to be able to update a note with a 'pop up' modal component.
+This lab project focused on building a simple TODO note list application. Notes can be added to the list from the 'dashboard' with the note form and removed by clicking the 'remove' button next a note in the list. In Lab 29, functionality was added to be able to update a note with a 'pop up' modal component.
 
 ## Architecture
 
