@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NoteItem from '../noteitem/noteitem';
-import '../../styles/main.scss';
 import autoBind from '../../utils';
 
 export default class NoteList extends React.Component {
