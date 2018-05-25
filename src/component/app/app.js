@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Dashboard from './../dashboard/index';
+import Dashboard from '../dashboard/dashboard';
 import '../../styles/main.scss';
-import Landing from './../landing/index';
+import Landing from '../landing/landing';
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +15,7 @@ export default class App extends React.Component {
           <nav>
             <ul>
               <li><Link to='/'>Home</Link></li>
-              <li><Link to='dashboard/'>Dashboard</Link></li> 
+              <li><Link to='/dashboard'>Dashboard</Link></li> 
                
             </ul>
           </nav>
