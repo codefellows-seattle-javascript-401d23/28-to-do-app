@@ -1,23 +1,11 @@
 {
-  "name": "to-do-app",
+  "name": "frontend-tools",
   "version": "1.0.0",
-  "description": "401 JS --  Lab 28 Todo\r ===",
-  "main": "webpack-common.js",
+  "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack-dev-server --config webpack.dev.js"
+    "watch": "webpack-dev-server --config webpack.dev.js",
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/buphnezz/to-do-app.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/buphnezz/to-do-app/issues"
-  },
-  "homepage": "https://github.com/buphnezz/to-do-app#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
@@ -28,6 +16,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.11",
     "dotenv": "^5.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
@@ -35,20 +25,26 @@
     "eslint-plugin-react": "^7.8.2",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.4",
+    "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.2.2",
+    "react-test-renderer": "^16.4.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
+    "superagent": "^3.8.3",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "mini-css-extract-plugin": "^0.4.0",
-    "react-router-dom": "^4.2.2",
-    "uuid": "^3.2.1",
-    "watch": "^1.0.2"
-  }
+    "uuid": "^3.2.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

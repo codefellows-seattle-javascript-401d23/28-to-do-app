@@ -8,6 +8,6 @@ configure({ adapter: new Adapter() });
 describe('Dashboard testing', () => {
   test('Simple test for initial state', () => {
     const mountedDashboard = mount(<Dashboard />);
-    expect(mountedDashboard.state('expenses')).toEqual([]);
+    expect(mountedDashboard.state('notes')).toEqual([]);
   });
 });

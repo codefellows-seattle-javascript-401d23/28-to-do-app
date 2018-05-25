@@ -6,7 +6,7 @@ export default class Landing extends React.Component {
     super(props);
 
     this.state = {
-      expenses: [],
+      notes: [],
       error: null,
     };
 

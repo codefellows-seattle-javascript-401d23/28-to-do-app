@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Dashboard from './../Dashboard';
-import NoteForm from './../NoteForm';
+import Dashboard from './../Dashboard/dashboard';
+import NoteForm from './../NoteForm/note-form';
 import '../../styles/main.scss';
-import Landing from './../Landing';
+import Landing from './../Landing/landing';
 
 export default class App extends React.Component {
   render() {
