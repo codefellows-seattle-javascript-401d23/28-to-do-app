@@ -29,6 +29,17 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  handleUpdateNote(noteToUpdate) {
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map((note) => {
+          return (note.id === noteToUpdate.id ? noteToUpdate : note);
+        }),
+        error: null,
+      };
+    });
+  }
+
   handleDeleteNote(event) {
     event.preventDefault();
     const idToDelete = event.target.id;
@@ -55,6 +66,7 @@ export default class Dashboard extends React.Component {
         <NoteList
         notes={this.state.notes}
         handleDeleteNote={this.handleDeleteNote}
+        handleUpdateNote={this.handleUpdateNote}
         />
       </section>
     );

@@ -55,4 +55,4 @@ export default class NoteForm extends React.Component {
 NoteForm.propTypes = {
   note: PropTypes.object,
   handleAddNote: PropTypes.func,
-}
+};
