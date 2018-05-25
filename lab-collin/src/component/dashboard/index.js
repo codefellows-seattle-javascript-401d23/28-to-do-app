@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from './../note-form/index';
+import NoteItem from '../note-item/note-item';
 import autoBind from '../../utils';
 
 export default class Dashboard extends React.Component {
@@ -40,6 +41,15 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  handleUpdateNote(noteToUpdate) {
+    return this.setState((previousState) => { 
+      return {
+        notes: previousState.notes.map(note =>
+          (note.id === noteToUpdate.id ? noteToUpdate : note)),
+      };
+    });
+  }
+
   handleNotesList() {
     return (
       <ul>
@@ -47,8 +57,11 @@ export default class Dashboard extends React.Component {
           this.state.notes.map((note) => {
             return (
               <li key={note.id}>
-                {note.title} : {note.content}
-                <button onClick={e => this.handleDeleteNote(note, e)}>delete note</button>
+                <NoteItem
+                  note={note}
+                  handleDeleteNote={this.handleDeleteNote}
+                  handleUpdateNote={this.handleUpdateNote}
+                  />
               </li>
             );
           })
@@ -62,7 +75,7 @@ export default class Dashboard extends React.Component {
       <section className="dashboard">
         <h1>Todo List Dashboard</h1>
         <NoteForm 
-          handleAddNote={this.handleAddNote} 
+          handleComplete={this.handleAddNote} 
         />
         { this.state.error && <h2 className="error">You must enter a title.</h2> }
         { this.handleNotesList() }
