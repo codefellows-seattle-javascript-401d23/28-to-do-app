@@ -23,9 +23,8 @@ export default class NoteItem extends React.Component {
 
     return (
       <div className='note-item'>
-        <strong>{note.title}</strong> : {note.content}
+        <a href="#" onDoubleClick={showModal}><strong>{note.title}</strong> : {note.content}</a>
         <button onClick={handleRemoveNote.bind(null, note)}> Remove</button>
-        <button onClick={showModal}>Update</button>
         <Modal show={note.editing} handleClose={hideModal}>
           <h3>Editing {note.title}</h3>
           <NoteForm handleComplete={updateAndClose} note={note}/>
