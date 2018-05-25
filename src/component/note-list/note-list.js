@@ -1,6 +1,6 @@
 import React from 'react';
-import autoBind from '../utils';
-import NoteItem from './note-item';
+import autoBind from '../../utils';
+import NoteItem from '../note-item/note-item';
 
 export default class NoteList extends React.Component {
   constructor(props) {
@@ -14,11 +14,12 @@ export default class NoteList extends React.Component {
       <ul>
         { this.props.notes.map((note) => {
           return (
-        <NoteItem 
-          handleRemoveNote={this.props.handleRemoveNote} 
-          key={note.id} 
-          note={note}
-          id={note.id} />
+            <li key={note.id}>
+              <NoteItem note={note} 
+              handleRemoveNote={this.props.handleRemoveNote} 
+              handleUpdateNote={this.props.handleUpdateNote} //eslint-disable-line
+              />
+            </li>
           );
         }) }
       </ul>
