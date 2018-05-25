@@ -18,6 +18,10 @@ export default class Dashboard extends React.Component {
     autoBind.call(this, Dashboard);
   }
 
+  //--------------------------------------------------------
+  // MEMBER FUNCTIONS
+  //--------------------------------------------------------
+
   handleAddNote(note) {
     if (note.title === '') {
       return this.setState({ error: true });
@@ -31,7 +35,7 @@ export default class Dashboard extends React.Component {
   }
 
   handleRemoveNote(noteToRemove) {
-    return this.setState((previousState) => {
+    this.setState((previousState) => {
       return {
         notes: previousState.notes.filter(note => note.id !== noteToRemove.id),
       };
@@ -39,24 +43,29 @@ export default class Dashboard extends React.Component {
   }
 
   // TODO:  added during lecture missing something in the note-item module....
-  handleUpdatedNote(noteToUpdate) {
+  handleUpdateNote(noteToUpdate) {
     return this.setState((previousState) => {
       return {
-        notes: previousState.notes.map(note => note.id !== noteToUpdate.id),
+        notes: previousState.notes.map(note => (note.id === noteToUpdate.id ? noteToUpdate : note)),
       };
     });
   }
+
+  //--------------------------------------------------------
+  // LIFECYCLE HOOKS
+  //--------------------------------------------------------
 
   render() {
     return (
       <section className="dashboard">
         <h1>Llama Done Dashboard</h1>
         <NoteForm
-        handleAddNote={this.handleAddNote}
+        handleComplete={this.handleAddNote}
         />
         <NoteList
           notes={this.state.notes}
         handleRemoveNote={this.handleRemoveNote}
+          handleUpdateNote={this.handleUpdateNote}
         />
         { this.state.error && <h2 className="error">Enter a Llama note!</h2> }
       </section>
