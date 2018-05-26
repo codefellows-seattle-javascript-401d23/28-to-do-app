@@ -58,9 +58,11 @@ export default class Dashboard extends React.Component {
     return (
       <section className="dashboard">
         <h1>Dashboard</h1>
+        <p>Add a note below!</p>
         <NoteForm
         handleComplete={this.handleAddNote}
         />
+        <p>double-click a note to edit!</p>
         <NoteList
           notes={this.state.notes}
           handleRemoveNote={this.handleRemoveNote}
