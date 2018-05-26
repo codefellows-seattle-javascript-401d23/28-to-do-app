@@ -4,11 +4,11 @@
   "description": "A Todo App built with React",
   "scripts": {
     "watch": "webpack-dev-server --config webpack.dev.js",
-    "test": "eslint . && jest --coverage --forceExit --runInBand"
+    "test": "eslint . && jest --verbose --coverage --forceExit --runInBand"
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.scss$": "<rootDir>/src/__test__?mock-asset.js"
+      "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
     }
   },
   "devDependencies": {
