@@ -29,7 +29,6 @@ export default class Dashboard extends React.Component {
           (item.id === note.id ? note : item)),
       };
     });
-    this.forceUpdate();
   }
 
   handleRemoveNote(note) {

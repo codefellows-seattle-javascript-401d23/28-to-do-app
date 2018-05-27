@@ -30,7 +30,7 @@ export default class NoteForm extends React.Component {
       content: this.state.content,
     };
     this.props.handleAddNote(note);
-    this.setState(this.props.note ? this.props.note : emptyState);
+    this.setState(this.props.note ? note : emptyState);
   }
 
   render() {
