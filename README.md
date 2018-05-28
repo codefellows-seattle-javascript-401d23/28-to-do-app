@@ -1,12 +1,13 @@
-# LAB 28
+# LAB 28-29
 
 **Author**: Joshua Fredrickson
 
-**Version**: 1.0.0 
+**Version**: 2.0.0 
 
 
 ## Overview
-Lab 28 is a note taking application that is locally is installed and ran through a browser. at is local is installed and ran through a browser.
+Lab 28 is a note taking application that is locally is installed and ran through a browser. that 
+is locally is installed and ran through a browser.
 
 
 ## How to use
@@ -36,6 +37,7 @@ http-errors, jest, eslint, JavaScript, enzyme, React
 05-23-2018 6:13pm note items are populating but not in their own comp
 05-23-2018 7:23pm refactoring expense into note
 05-23-2018 10:18pm finished refactoring add note-form test
+05-28-2018 1:44pm added Lab29 code.
 
 
 Special thanks to all of the Code Fellows staff and fellow 401-d23 students.
