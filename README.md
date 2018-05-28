@@ -1,57 +1,43 @@
-401 JS --  Lab 28 Todo
-===
+# LAB 28-29
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
- 
-## Feature Tasks 
-Create the following components and structure them according to the following diagram.  
-``` 
-App
-  Landing
-  Dashboard
-    NoteForm
-    NoteList
-      Noteitem
-```
-#### App
-* The app component should manage the frontend routes and have a navbar
-* the `/` route should display the `Landing` component
-* the `/dashboard` route should display the `Dashboard` component
+**Author**: Joshua Fredrickson
 
-#### Landing
-* The landing component should display a brief description of the to do app
+**Version**: 2.0.0 
 
-#### Dashboard Component 
-* The dashboard component should manage the entire **application state**. 
-* The state should contain a notes array
-* It should have a bound `addNote(note)` method that adds a note to `state.notes`
-  * each note that is added should have the following data
-    * `id`: always should contain the result of `uuid.v1()`
-    * `content`: user provided content
-    * `title`: user provided title
-* It should have a bound `removeNote(note)` method that removes a note from `state.notes` based on its `id`
 
-#### NoteForm Component
-* `onComplete` the NoteForm should add a note to the application state
+## Overview
+Lab 28 is a note taking application that is locally is installed and ran through a browser. that 
+is locally is installed and ran through a browser.
 
-#### NoteList Component 
-* should display an unordered list of NoteItem components
 
-#### NoteItem
-* should display the notes content and title
-* should display a delete button
-  * `onClick` the note should be removed from the application state
+## How to use
+To use the Lab 28 application, [Node.js](https://nodejs.org/en/)and [npm](https://www.npmjs.com/) 
+(Node Package manager)will need
+ to be locally installed.  Once Node.js and npm have been installed, install the Lab 28 files.  
+ Prior to starting the Lab 28 application, from the command line while you are in the Lab 28 file 
+ folder, enter the command `npm i`.  This will download all needed dependencies for the 
+ application to run.   
 
-## Test
-* Test Dashboard
-  * Test the initial state
-* Test NoteForm
-  * Test the initial state
+##  Architecture 
+This application was deployed with the following technologies along with the illlustrated structure.
+Node.js, npm, dotenv, uuid, babel, superagent, 
+http-errors, jest, eslint, JavaScript, enzyme, React
 
-##  Documentation  
-Write a description of the project in your README.md
+![landing page image](./asset/IMG_9485.jpg)
+![dashboard page image](./asset/IMG_9486.jpg)
+
+   
+
+## Change Log
+05-23-2018 3:35pm initial commit
+05-23-2018 4:38pm finished scaffolding the lecture code
+05-23-2018 4:51pm debugging lecture code
+05-23-2018 4:57pm Lecture code is fully operational"
+05-23-2018 6:02pm refactoring navBar and landing page
+05-23-2018 6:13pm note items are populating but not in their own comp
+05-23-2018 7:23pm refactoring expense into note
+05-23-2018 10:18pm finished refactoring add note-form test
+05-28-2018 1:44pm added Lab29 code.
+
+
+Special thanks to all of the Code Fellows staff and fellow 401-d23 students.
