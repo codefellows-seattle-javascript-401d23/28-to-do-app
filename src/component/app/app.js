@@ -28,7 +28,7 @@ export default class App extends React.Component {
         <Route
         exact
         path='/dashboard'
-        component={Dashboard}
+        component={ Dashboard }
         />
       </div>
       </BrowserRouter>
