@@ -1,0 +1,65 @@
+@import 'vars';
+
+html {
+  background: $dark-background;
+  font-family: $sans-serif-font;
+  text-align: center;
+}
+
+a {
+  box-sizing: border-box;
+  text-decoration: none;
+  background: $color-scheme-2;
+  color: $light-background;
+  padding: 5px 10px;
+  border-radius: $border-radius;
+  border: 1px solid $color-scheme-2;
+}
+
+a:hover {
+  border: 1px solid $dark-background;
+}
+
+body {
+  background: $white;
+  padding: 20px;
+  margin: $border-radius;
+  border-radius: $border-radius;
+}
+
+p {
+  font-size: 12px;
+}
+
+nav li {
+  display: inline;
+  padding: 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: $serif-font;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+header {
+  color: $color-scheme-1;
+  margin-bottom: 40px;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+button {
+  border-radius: $border-radius;
+  padding: 5px;
+  font-size: 12px;
+}
