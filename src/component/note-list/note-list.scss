@@ -1,0 +1,12 @@
+@import '../../style/vars';
+
+.note-list {
+  li {
+    margin-top: 10px;
+    padding: 10px 10px 10px 20px;
+    border: 2px solid $color-scheme-2;
+    background: $light-background;
+    border-radius: $border-radius;
+    clear: both;
+  }
+}

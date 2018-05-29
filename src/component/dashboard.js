@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
-import NoteForm from './note-form';
-import NoteList from './note-list';
+import NoteForm from './note-form/note-form';
+import NoteList from './note-list/note-list';
 import autobind from '../utils/autobind';
 
 export default class Dashboard extends React.Component {
@@ -22,10 +22,19 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  handleRemoveNote(id) {
+  handleUpdateNote(note) {
+    this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(item =>
+          (item.id === note.id ? note : item)),
+      };
+    });
+  }
+
+  handleRemoveNote(note) {
     this.setState((previousState) => {
       return ({
-        notes: [...previousState.notes].filter(item => item.id !== id),
+        notes: previousState.notes.filter(item => item.id !== note.id),
       });
     });
   }
@@ -40,7 +49,7 @@ export default class Dashboard extends React.Component {
         const notes = JSON.parse(localStorage.notes);
         return this.setState({ notes });
       } catch (err) {
-        return console.error(err);
+        return console.error(err); // eslint-disable-line
       }
     } else {
       return null;
@@ -57,6 +66,7 @@ export default class Dashboard extends React.Component {
         <NoteList
           className='note-list'
           handleRemoveNote={ this.handleRemoveNote }
+          handleUpdateNote={ this.handleUpdateNote }
           notes={ this.state.notes }
         />
       </section>

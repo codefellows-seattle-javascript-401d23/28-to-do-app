@@ -1,8 +1,8 @@
 # Documentation
 
-A simple React app that allows users to create and store to-do list items.
+A simple React app that allows users to create, store, update, and delete to-do list items.
 
-This app uses React, Sass, jest, enzyme, babel, and webpack.
+This app uses React, Sass, jest, enzyme, babel, uuid, prop-types, and webpack.
 
 ### Using Locally
 1. Fork and clone this repo
@@ -13,5 +13,7 @@ This app uses React, Sass, jest, enzyme, babel, and webpack.
 
 
 ### Testing
+
+Testing is run through jest. To test, run:
 
     npm run test
