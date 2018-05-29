@@ -1,0 +1,28 @@
+.noteList{
+  margin-top: 5%;
+  width:100%;
+  p {
+    font-size: 35px;
+    float:left;
+  }
+  ul{
+    padding: none;
+    margin: none;
+    padding-left: 0px;
+    text-decoration-style: none;
+    float:left;
+    width:60%;
+    margin-right:10%;
+  }
+  title{
+    font-size: 28px;
+    margin-left:7%;
+    font-weight: 600;
+    float:left;
+  }
+  date {
+    display:inline-block;
+    margin-left:2%;
+    color: grey;
+  }
+}

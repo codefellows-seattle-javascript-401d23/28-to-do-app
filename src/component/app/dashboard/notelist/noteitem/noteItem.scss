@@ -1,0 +1,37 @@
+.noteItem {
+  padding:0px,0px, 0px, 0px;
+  width:100%;
+  border-bottom-style: groove;
+  border-bottom: 2px, thin, black;
+  background-color: white;
+  color:rgb(80, 79, 79);
+  list-style-type: none;
+
+  article {
+    font-size: 18px;
+    float:right;
+    margin-right: 2%; 
+  }
+  button {
+    float: right;
+  }
+  h3{
+    // text-align: center;
+    font-size: 22px;
+    margin:0px;
+  }
+  p{
+    text-overflow: ellipsis;
+    display:inline-block;
+    overflow: hidden;
+    padding-left:10%;
+  }
+  .noteForm {
+    margin-right:0px;
+    margin-top:0px;
+    width:100%;
+  }
+  .modal{
+    margin-left:0px;
+  }
+}

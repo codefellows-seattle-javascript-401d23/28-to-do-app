@@ -1,0 +1,66 @@
+.noteForm {
+  width: 60%;
+  background-color: white;
+  position: relative; 
+  height: 100px; 
+  border-radius: 2%;
+  box-shadow: 5px 7px 7px rgb(158, 150, 131);
+  float:right;
+  margin-right:10%;
+
+  .createButton {
+    width:100px;
+    height:45px;
+    display: inline-block;
+    font-size: 18px;
+    background-color: red;
+    color: white;
+    position:absolute;
+    left: 80%;
+    top: 30%;
+    border-radius: 7%;
+  }
+  .createButton:focus {
+    outline: none;
+  }
+  .updateButton {
+    width:100px;
+    height:45px;
+    display: inline-block;
+    font-size: 18px;
+    background-color: red;
+    color: white;
+    position:absolute;
+    left: 80%;
+    top: 30%;
+    border-radius: 7%;
+  }
+  .updateButton:focus {
+    outline: none;
+    }
+  input {
+    height:90%;
+    width: 80%;
+    font-size: 28px;
+    background-color: white;
+    border-style: none;
+    border-radius: 7%;
+    margin-left: 1%;
+    position: absolute;
+  }
+  select:focus,
+  option:focus,
+  textarea:focus,
+  input:focus {
+    outline: none;
+    background-color: white;
+  }
+  .group{
+    display:inline-block;
+    position:absolute;
+    width:30px;
+    left: 60%;
+    top: 30%;
+    z-index: 99;
+  }
+}

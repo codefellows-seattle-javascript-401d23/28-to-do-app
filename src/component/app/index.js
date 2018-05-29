@@ -3,6 +3,13 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Dashboard from './dashboard/index';
 import Landing from './landing/index';
 import '../../styles/main.scss';
+import '../app/app.scss';
+import '../app/landing/landing.scss';
+import '../app/dashboard/noteform/noteForm.scss';
+import '../app/dashboard/notelist/noteList.scss';
+import '../app/dashboard/notelist/noteitem/noteItem.scss';
+import '../app/dashboard/groups/groups.scss';
+import '../app/dashboard/groups/groupsList/groupsList.scss';
 import knot from '../../utils/img/knot.png';
 
 
@@ -12,13 +19,13 @@ export default class App extends React.Component {
       <div className="app">
         <BrowserRouter>
           <div>
-            <header>
-              <h1>To-Do-List</h1>
+            <header className ='header'>
+              <h1><Link to="/">To-Do-List</Link></h1>
               <img src={knot}/>
               <nav>
                 <ul>
-                  <li><Link to="/">Home</Link></li>
-                  <li><Link to="/dashboard">Dashboard</Link></li>                
+                  <li ><Link to="/" className='nav'>Home</Link></li>
+                  <li ><Link to="/dashboard" className='nav'>Dashboard</Link></li>                
                 </ul>
               </nav>
             </header>
