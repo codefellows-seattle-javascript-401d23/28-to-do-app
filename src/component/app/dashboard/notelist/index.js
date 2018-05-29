@@ -5,28 +5,39 @@ import NoteItem from './noteitem/index';
 export default class NoteList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      projectGroup: null,
+    };
   }
   render() {
     return (
-      <div className='noteList'>
+      <div>
         {
-          this.props.notes.length > 0 ?
-          <ul>
-            { this.props.notes.map((note) => {
-              return (
-                <NoteItem 
-                key={note.id} 
-                note={note} 
-                remove={this.props.remove} 
-                update={this.props.update}
-                />
-              );
-            })}
-          </ul> :
-          <div>
-            <p>NO LIST</p>
-          </div>
+          this.state.projectGroup ? <div></div> :
+            <div className='noteList'>
+              <title>Today</title>
+              <date>
+              {
+                new Date().toDateString()
+              }
+              </date>
+              {
+                this.props.notes.length > 0 ?
+                <ul>
+                  { this.props.notes.map((note) => {
+                    return (
+                      <NoteItem 
+                      key={note.id} 
+                      note={note} 
+                      remove={this.props.remove} 
+                      update={this.props.update}
+                      />
+                    );
+                  })}
+                </ul> :
+                <div></div>
+              }
+            </div>
         }
       </div>
     );
@@ -35,6 +46,6 @@ export default class NoteList extends React.Component {
 
 NoteList.propTypes = {
   remove: PropTypes.func,
-  notes: PropTypes.object,
+  notes: PropTypes.array,
   update: PropTypes.func,
 };

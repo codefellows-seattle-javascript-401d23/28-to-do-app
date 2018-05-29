@@ -7,13 +7,13 @@ export default class NoteItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      note: this.props,
+      note: null,
     };
     this.handleRemove = this.handleRemove.bind(this);
   }
   handleRemove(event) {
     event.preventDefault();
-    this.props.remove(this.state.note);
+    this.props.remove(this.props.note);
   }
   render() {
     const { note, update } = this.props;
@@ -21,20 +21,29 @@ export default class NoteItem extends React.Component {
     const showModal = () => update({ ...note, editing: true });
     const hideModal = () => update({ ...note, editing: false });
 
-    const updateAndClose = (updatedExpense) => {
-      update({ ...updatedExpense, editing: false });
+    const updateAndClose = (updatedNote) => {
+      update({ ...updatedNote, editing: false });
+      this.setState({
+        note: updatedNote,
+      });
     };
-    console.log(this.state);
     return (
-      <li className='noteItem' onDoubleClick={showModal}>
-        <p>{note.content}</p>
-        <article>{note.createdOn.toString()}</article>
+      <div>
+        <li className='noteItem' onDoubleClick={showModal}>
         <button onClick={this.handleRemove}>X</button>
-        <Modal show={note.editing} hide={hideModal}>
-          <h3>Editing {note.content}</h3>
-          <NoteForm handleComplete={updateAndClose} note={this.state} />
+        <p>{ 
+          this.state.note ? this.state.note : note.content
+          }</p>
+        <article>{note.createdOn.toString()}</article>
+        
+        <Modal className='modal' show={note.editing} hide={hideModal}>
+          <h3>Editing {
+            this.state.note ? this.state.note : note.content
+            }</h3>
+          <NoteForm className='noteForm' handleComplete={updateAndClose} note={note} hide={hideModal}/>
         </Modal>
       </li>
+      </div>
     );
   }
 }

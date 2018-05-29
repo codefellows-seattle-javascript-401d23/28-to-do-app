@@ -3,6 +3,7 @@ import uuid from 'uuid/v4';
 import autoBind from '../../../utils/index';
 import NoteForm from './noteform/index';
 import NoteList from './notelist/index';
+import Groups from './groups/index';
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -17,8 +18,10 @@ export default class Dashboard extends React.Component {
     if (note.content === '') {
       return this.setState({ error: true });
     }
-    note.createdOn = new Date();
+    note.createdOn = new Date().toDateString();
     note.id = uuid();
+    note.editing = null;
+    note.group = note.project;
     return this.setState((previousState) => {
       return {
         notes: [...previousState.notes, note],
@@ -31,7 +34,7 @@ export default class Dashboard extends React.Component {
     return this.setState((previousState) => {
       return {
         notes: [...previousState.notes].filter((note) => {
-          if (note.id !== input.note.id) return note;
+          if (note.id !== input.id) return note;
           return null;
         }),
       };
@@ -50,8 +53,11 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <NoteForm add={this.handleAdd}/>
+      <aside>
+        <Groups/>
+      </aside>
         <NoteList remove={this.handleRemove} notes={this.state.notes} update={this.handleUpdate}/>
+        <NoteForm add={this.handleAdd} all={this.state.notes}/>
       </div>
     );
   }

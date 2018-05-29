@@ -8,7 +8,7 @@ export default class Modal extends React.Component {
     return (
       <div className={showHideClassName}>
         <main className='modal-main'>
-          <button onClick={this.props.hide}> close </button>
+          <button onClick={this.props.hide}>X</button>
           {this.props.children}
         </main>
       </div>
