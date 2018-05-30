@@ -1,0 +1,10 @@
+@import '../../styles/vars';
+
+span {
+  font-weight: 200;
+}
+
+span:hover {
+  color: $hover-color;
+  cursor: pointer;
+}

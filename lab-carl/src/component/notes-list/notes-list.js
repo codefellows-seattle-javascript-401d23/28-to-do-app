@@ -3,6 +3,8 @@
 import React from 'react';
 import Note from '../note-item/note-item';
 import autoBind from '../../utils/utils';
+import PropTypes from 'prop-types';
+import './notes-list.scss';
 
 export default class NotesList extends React.Component {
 
@@ -17,7 +19,7 @@ export default class NotesList extends React.Component {
               this.props.notes.map((note) => {
                 return (
                   <li key={note.id}>
-                  <Note note={note} handleRemoveNote={this.props.handleRemoveNote}/>
+                    <Note note={note} handleRemoveNote={this.props.handleRemoveNote} handleUpdateNote={this.props.handleUpdateNote}/>
                   </li>
                 );
               })
@@ -29,4 +31,8 @@ export default class NotesList extends React.Component {
       </div>
     );
   }
-}
+};
+
+NotesList.propTypes = {
+  notes: PropTypes.array,
+};
