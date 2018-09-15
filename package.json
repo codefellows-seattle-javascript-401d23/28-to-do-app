@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "jest": {
-    "moduleNameMapper": {
+    "moduleNameper": {
       "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
     }
   },
